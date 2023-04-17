@@ -1,0 +1,136 @@
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: Inconsolata, sans-serif;
+  color: #333;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.header {
+  height: 50px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo {
+  height: 100%;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav li {
+  margin: 0 10px;
+}
+
+.nav li a {
+  color: #000;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.navtext {
+  font-family: Rubik, sans-serif;
+  color: #8a95f8;
+  font-size: 16px;
+  line-height: 200%;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.navbar {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #000;
+  background-color: #fff;
+}
+
+.section-home {
+  background-color: #ffc700;
+  padding: 30px 0;
+}
+
+.section-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-image {
+  width: 50%;
+  box-shadow: black 20px 20px;
+}
+
+.section-image img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+.section-text {
+  width: 50%;
+  color: #fff;
+}
+
+.section-text h1 {
+  font-size: 70px;
+  margin: 0 0 50px 0;
+  color: #000;
+}
+
+.section-text h2 {
+  font-size: 50px;
+  margin: 0 0 40px 0;
+  color: transparent;
+  -webkit-text-stroke: 2px black;
+}
+
+.section-button {
+  background-color: #fff;
+  border: none;
+  color: #ffc700;
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.section-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-icons i {
+  font-size: 24px;
+  margin: 0 10px;
+  color: #fff;
+}
