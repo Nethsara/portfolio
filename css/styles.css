@@ -71,6 +71,7 @@ body {
 .section-home {
   background-color: #ffc700;
   padding: 30px 5vw;
+  height: 75vh;
 }
 
 .section-content {
@@ -78,7 +79,6 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -94,7 +94,7 @@ body {
 }
 
 .section-text {
-  width: 45%;
+  width: 70vw;
   color: #fff;
 }
 
@@ -112,11 +112,11 @@ body {
 }
 
 .white-box-button {
-  width: 10vw;
-  height: 2vw;
+  width: 12vw;
+  height: 3vw;
   background-color: white;
   color: black;
-  font-size: 20px;
+  font-size: 2vw;
   padding-top: 1vw;
   padding-left: 2vw;
   box-shadow: black 0.5vw 0.5vw;
@@ -133,4 +133,43 @@ body {
   font-size: 2.4vw;
   margin: 2vw 1vw;
   color: black;
+}
+
+.section-about {
+  background-color: #fff;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 3vw;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 150px 0;
+}
+
+.about-content p {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.4vw;
+}
+
+.about-image {
+  text-align: center;
+  margin-top: 20px;
+  width: 400px;
+}
+
+.about-image img {
+  max-width: 100%;
 }
