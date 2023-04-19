@@ -396,6 +396,8 @@ body {
   border: #000 2px solid;
 }
 
+/* Contact Section */
+
 .contact {
   background-color: #eeedde;
   align-items: center;
@@ -467,4 +469,45 @@ input[type="submit"] {
 .divider h4 {
   text-align: center;
   margin: 20px;
+}
+
+/* Footer styles */
+footer {
+  background-color: #000000;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+.footer-left img {
+  height: 40px;
+  margin-right: 20px;
+}
+
+.footer-middle a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+}
+
+.social-icons {
+  display: flex;
+  margin-right: 20px;
+}
+
+.social-icons a {
+  color: #ffffff;
+  margin-right: 10px;
+}
+
+.social-icons a:last-child {
+  margin-right: 0;
 }
