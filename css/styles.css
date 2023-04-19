@@ -236,9 +236,119 @@ body {
 .skills-text {
   padding: 20px;
   text-align: center;
+  font-size: 15px;
 }
 
 .skills-text h3 {
   margin-top: 0;
   margin-bottom: 10px;
+}
+
+/* Resume Section */
+#resume {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.resume-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: #f7d04d;
+  padding: 10px 20px;
+  height: 10px;
+  box-shadow: black 0.5vw 0.5vw;
+  color: #000;
+}
+
+.image-container {
+  width: 50%;
+  height: 70vh;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+}
+
+.resume-right-container {
+  padding-left: 10px;
+  width: 50%;
+  height: 70vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.resume-box-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 50%;
+}
+
+.resume-box-row {
+  display: flex;
+  padding: 50px;
+  justify-content: space-between;
+}
+
+.resume-box {
+  width: 250px;
+  height: 200px;
+  background-color: red;
+  position: relative;
+  box-shadow: black 0.5vw 0.5vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.resume-secondary-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: -25%;
+  left: 5%;
+  width: 50%;
+  height: 50%;
+  background-color: white;
+  border: #000 2px solid;
+}
+
+.resume-box-container h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.education .resume-box {
+  background-color: #d99bf9;
+}
+
+.experience .resume-box {
+  background-color: #ef8f35;
+}
+
+.resume-secondary-box-img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.resume-text-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.resume-box-h6 {
+  margin-top: 5px;
 }
