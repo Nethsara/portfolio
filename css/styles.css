@@ -1,70 +1,110 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
 body {
   display: flex;
   flex-direction: column;
   font-family: Inconsolata, sans-serif;
   font-size: 14px;
   line-height: 20px;
-}
-
-.header {
-  height: 50px;
-  background-color: #fff;
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
-}
-
-.logo {
-  height: 100%;
-}
-
-.nav {
-  display: flex;
-  align-items: center;
-  margin-left: auto;
-}
-
-.nav ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
 }
-
-.nav li {
-  margin: 0 10px;
-}
-
-.nav li a {
-  color: #000;
-  text-decoration: none;
-  padding: 10px;
-  border-radius: 5px;
-  background-color: #fff;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
-}
-
-.navtext {
-  font-family: Rubik, sans-serif;
-  color: #8a95f8;
-  font-size: 16px;
-  line-height: 200%;
-  font-weight: 700;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.navbar {
-  padding-top: 20px;
-  padding-bottom: 10px;
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 4px 20px hsla(207, 24%, 35%, 0.1);
+  background-color: #ffffff;
+  z-index: 1;
   border-bottom: 3px solid #000;
-  background-color: #fff;
+}
+
+.header a {
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+}
+
+.logo a {
+  font-size: 24px;
+  font-weight: bold;
+  font-style: bold;
+  color: #000000;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu a {
+  display: block;
+  padding: 7px 15px;
+  font-size: 17px;
+  font-weight: 500;
+  transition: 0.2s all ease-in-out;
+  color: #000000;
+}
+
+.menu:hover a {
+  opacity: 0.4;
+}
+
+.menu a:hover {
+  opacity: 1;
+  color: #fff;
+}
+
+.menu-icon {
+  display: none;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+#menu-toggle:checked ~ .menu {
+  transform: scaleY(1);
+}
+
+@media only screen and (max-width: 950px) {
+  .menu {
+    flex-direction: column;
+    background-color: #151418;
+    align-items: start;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    transform: scale(1, 0);
+    transform-origin: top;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  }
+
+  .menu li {
+    margin-bottom: 10px;
+  }
+
+  .menu-icon {
+    display: block;
+    color: #000000;
+    font-size: 28px;
+    cursor: pointer;
+  }
+
+  .menu a {
+    color: #ffffff;
+  }
 }
 
 /* Start of home section */
