@@ -567,21 +567,6 @@ nav {
   }
 }
 
-@media screen and (min-width: 1024px) {
-  .projects {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .project-info h3 {
-    font-size: 2rem;
-  }
-
-  .project-info p {
-    margin-bottom: 40px;
-  }
-}
-
 /* Contact Section */
 
 .contact {
@@ -604,18 +589,19 @@ nav {
   background-color: #fefefe;
   display: flex;
   border: #000 2px solid;
-  flex-direction: column;
+  width: 100%;
+  flex-direction: row;
   align-items: center;
 }
 
 .contact-image {
-  width: 50%;
+  width: 20%;
   height: auto;
-  padding: 50px;
+  padding: 100px;
 }
 
 form {
-  width: 100%;
+  width: 50%;
   padding: 20px;
 }
 
@@ -637,22 +623,17 @@ textarea {
 
 input[type="submit"] {
   background-color: #0ff2bc;
+  color: white;
   border: #000 2px solid;
   padding: 10px;
   cursor: pointer;
-  width: 50%;
+  width: 30%;
   box-shadow: black 0.5vw 0.5vw;
-  margin: 10px 25% 0;
+  margin: 10px 40% 0;
 }
 
 .contact-container {
   background-color: transparent;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .divider h2,
