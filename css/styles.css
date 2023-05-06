@@ -162,7 +162,7 @@ nav {
   background-color: white;
   color: black;
   font-size: 2vw;
-  padding-top: 1vw;
+  padding-top: 15px;
   padding-left: 2vw;
   box-shadow: black 0.5vw 0.5vw;
   cursor: pointer;
@@ -184,6 +184,7 @@ nav {
   .section-home {
     height: 100vh;
   }
+
   .section-content {
     display: flex;
     flex-direction: column;
@@ -271,6 +272,7 @@ nav {
   text-align: center;
   margin-bottom: 20px;
   font-size: 1.4vw;
+  line-height: 2vw;
 }
 
 .about-image {
