@@ -265,14 +265,14 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 150px 0;
+  padding: 0 100px 0;
 }
 
 .about-content p {
   text-align: center;
   margin-bottom: 20px;
-  font-size: 1.4vw;
-  line-height: 2vw;
+  font-size: 2.5vw;
+  line-height: 3vw;
 }
 
 .about-image {
@@ -285,6 +285,11 @@ nav {
   max-width: 100%;
 }
 
+@media only screen and (max-width: 950px) {
+  .about-content {
+    padding: 0 50px 0;
+  }
+}
 /* Start of skills section */
 
 .section-skills {
