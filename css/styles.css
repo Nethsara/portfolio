@@ -727,3 +727,30 @@ footer {
 .social-icons a:last-child {
   margin-right: 0;
 }
+
+/* Media queries */
+@media screen and (max-width: 768px) {
+  footer {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .footer-middle {
+    margin-top: 40px;
+  }
+  .footer-middle {
+    margin-top: 20px;
+    flex-basis: 100%;
+    text-align: center;
+  }
+  .footer-middle a {
+    display: block;
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+
+  .footer-right {
+    flex-basis: 100%;
+    justify-content: center;
+    margin-top: 20px;
+  }
+}
