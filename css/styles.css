@@ -180,6 +180,68 @@ nav {
   color: black;
 }
 
+@media only screen and (max-width: 950px) {
+  .section-home {
+    height: 100vh;
+  }
+  .section-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .section-image {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 2vw;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .section-image img {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .section-text {
+    text-align: center;
+    margin-top: 2vw;
+  }
+
+  .section-text h1 {
+    margin: 0 0 3vw 0;
+  }
+
+  .section-text h2 {
+    margin: 0 0 2vw 0;
+  }
+
+  .white-box-button {
+    width: 25vw;
+    font-size: 3vw;
+    padding: 1vw 2vw;
+    cursor: pointer;
+    margin-top: 3vw;
+    display: inline-block;
+  }
+
+  .section-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+  }
+
+  .section-icons i {
+    font-size: 4vw;
+    margin: 2vw;
+    color: black;
+  }
+}
+
 /* Start Of About Section */
 
 .section-about {
