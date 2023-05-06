@@ -289,9 +289,9 @@ nav {
 
 .section-skills {
   background-color: #919bf8;
-  padding: 40px 0;
-  position: relative;
+  padding: 40px 20px;
 }
+
 .section-skills > .container {
   background-color: transparent;
 }
@@ -311,18 +311,15 @@ nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin: 0 -10px;
 }
 
 .skills-box {
   background-color: #fff;
-  margin-bottom: 20px;
-  width: calc(33.33% - 50px);
-  height: 70vh;
+  margin: 0 10px 20px;
+  width: calc(33.33% - 20px);
+  height: auto;
   box-shadow: black 0.5vw 0.5vw;
-}
-
-.skills-box:last-child {
-  margin-right: 0;
 }
 
 .skills-image {
@@ -337,7 +334,7 @@ nav {
 .skills-text {
   padding: 20px;
   text-align: center;
-  font-size: 15px;
+  font-size: 1rem;
 }
 
 .skills-text h3 {
