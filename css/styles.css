@@ -353,6 +353,7 @@ nav {
 }
 
 /* Resume Section */
+/* Default styles for resume section */
 .resume {
   display: flex;
   flex-direction: row;
@@ -460,48 +461,39 @@ nav {
   margin-top: 5px;
 }
 
-/* Responsive styles for the resume section */
-@media screen and (max-width: 768px) {
+/* Media queries for responsive design */
+@media (max-width: 768px) {
   .resume {
     flex-direction: column;
   }
-
-  .image-container {
+  .image-container,
+  .resume-right-container {
     width: 100%;
-    order: 2;
-    margin-top: 30px;
   }
-
   .resume-right-container {
     display: flex;
-    padding-left: 0;
-    width: 100%;
+    justify-content: center;
     align-items: center;
-    justify-content: space-around;
+    padding-left: 0;
     flex-direction: column;
-    margin-top: 100px;
   }
-
   .resume-box-row {
     flex-direction: column;
     padding: 20px;
   }
-
   .resume-box {
     width: 100%;
     height: auto;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
-
-  .resume-text-box {
-    margin-top: 20px;
+  .resume-secondary-box {
+    top: -15%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 50%;
   }
-
-  .education {
-    display: flex;
+  .resume-box-container {
     align-items: center;
-    justify-content: space-around;
-    flex-direction: column;
   }
 }
 
