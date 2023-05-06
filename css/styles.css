@@ -95,6 +95,10 @@ nav {
     margin-bottom: 10px;
   }
 
+  .menu a {
+    margin-left: 20px;
+  }
+
   .menu-icon {
     display: block;
     color: #000000;
