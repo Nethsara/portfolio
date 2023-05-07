@@ -12,6 +12,24 @@ body {
   line-height: 20px;
   list-style: none;
 }
+
+/* Titles */
+.section-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: #f7d04d;
+  padding: 10px 20px;
+  height: 10px;
+  box-shadow: black 0.5vw 0.5vw;
+  color: #000;
+  border: #000 2px solid;
+}
+
 .header {
   position: sticky;
   top: 0;
