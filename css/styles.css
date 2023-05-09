@@ -14,7 +14,6 @@ body {
 }
 
 .container {
-  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -203,7 +202,7 @@ nav {
   }
 }
 
-/* Start of home section */
+/* ================================  Start of home section ================================ */
 
 .hero-button {
   background-color: #ffffff;
@@ -212,7 +211,7 @@ nav {
 .section-home {
   background-color: #ffc700;
   padding: 30px 5vw;
-  height: 75vh;
+  height: 80vh;
 }
 
 .section-content {
@@ -221,10 +220,11 @@ nav {
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
+  padding-top: 20vh;
 }
 
 .section-image {
-  width: 45%;
+  width: 35%;
   box-shadow: black 20px 20px;
 }
 
@@ -341,7 +341,7 @@ nav {
   }
 }
 
-/* Start Of About Section */
+/* ================================ Start Of About Section ================================ */
 
 .section-about {
   padding: 20px;
@@ -405,7 +405,7 @@ nav {
     letter-spacing: normal;
   }
 }
-/* Start of skills section */
+/* ================================ Start of skills section ================================ */
 
 .section-skills {
   background-color: #919bf8;
@@ -488,31 +488,150 @@ nav {
   }
 }
 
-/* Resume Section */
+/* ================================ Resume Section ================================ */
 
-/* Projects Section */
-.projects {
-  background-color: #ff90e8;
+.resume-container {
+  padding: 100px;
+  width: 100%;
   display: flex;
+  flex-direction: row;
+}
+.resume-card {
+  display: flex;
+  position: relative;
   flex-direction: column;
+  height: 300px;
+  width: 190px;
+  min-width: 250px;
+  padding: 1rem;
+  border-radius: 16px;
+  background: #ffc907;
+  box-shadow: 0.4rem 0.4rem #05060f;
+  transition: 0.2s;
+  border: 1px solid #000;
+  font-family: "Inter", sans-serif;
+}
+
+.card-ijse {
+  background-color: #f1f332;
+}
+
+.card-apium {
+  background-color: #ff91e7;
+}
+
+.resume-card:hover {
+  transform: translateY(-0.4rem);
+}
+
+.resume-card-author {
+  position: relative;
+  display: grid;
+  grid-template-columns: 75px 1fr;
   align-items: center;
-  padding: 50px 0;
+  margin: 3rem 0 0;
+}
+
+.author-name-prefix {
+  color: #e52e71;
+  font-weight: 600;
+}
+
+.author-avatar span {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f2f2f2;
+  margin: 16px 10px;
+}
+
+.resume-card-header {
+  margin-bottom: auto;
+  color: black;
+}
+
+.resume-card-header p {
+  font-size: 14px;
+  margin: 0 0 1rem;
+}
+
+.resume-card-header .title {
+  font-size: 25px;
+  margin: 0.25rem 0 auto;
+  cursor: pointer;
+  font-family: "Arial Black", sans-serif;
+}
+
+.resume-card-header .title:hover {
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  text-shadow: none;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.tags {
+  margin: 1rem 0 2rem;
+  padding: 0.5rem 0 1rem;
+  line-height: 2;
+  margin-bottom: 0;
+}
+
+.tags a {
+  font-style: normal;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.66rem;
+  border: 3px solid #28242f;
+  border-radius: 2rem;
+  padding: 0.2rem 0.85rem 0.25rem;
   position: relative;
 }
 
-.project {
-  display: flex;
-  flex-direction: column;
-  width: 90%;
-  margin-top: 10px;
-  margin-bottom: 40px;
-  background-color: white;
-  box-shadow: black 0.5vw 0.5vw;
+.tags a:hover {
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  text-shadow: none;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  background-clip: text;
+  border-color: white;
 }
 
-.project iframe {
-  width: 100%;
-  height: 300px;
+.experience-container h2 {
+  padding: 35px 45px 25px;
+}
+
+.experience-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 40px;
+  padding-left: 100px;
+}
+
+@media only screen and (max-width: 1133px) {
+  .resume-container {
+    flex-direction: column;
+  }
+}
+
+/* ================================ Projects Section ================================ */
+
+.projects iframe {
+  width: 50vw;
+  height: 60vh;
+}
+
+.projects {
+  background-color: #ff91e9;
+}
+
+.project-item {
+  display: flex;
+  flex-direction: row;
 }
 
 .project-info {
@@ -520,50 +639,31 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  text-align: center;
+  line-height: 100px;
 }
 
-.project-info h3 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+.project-info button {
+  margin: 30px;
+  background-color: #ffc700;
 }
 
-.project-info p {
-  margin-bottom: 20px;
+.projects .project-card {
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 50px;
 }
 
-.project-info a {
-  background-color: #6ad69d;
-  color: black;
-  padding: 10px 20px;
-  text-decoration: none;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  border: 2px solid black;
-}
-
-/* Project Section Responsive */
-@media screen and (min-width: 768px) {
-  .project {
-    flex-direction: row;
-    height: 400px;
-  }
-
-  .project iframe {
-    width: 50%;
-    height: 100%;
-  }
-
-  .project-info {
-    width: 50%;
-    padding: 40px;
-    text-align: left;
+@media only screen and (max-width: 768px) {
+  .projects .project-card {
+    flex-direction: column;
   }
 }
-
-/* Contact Section */
+/* ================================ Contact Section ================================ */
 
 .contact {
+  display: flex;
+  flex-direction: column;
   background-color: #eeedde;
   align-items: center;
   padding: 70px 0;
@@ -664,7 +764,7 @@ input[type="submit"] {
   }
 }
 
-/* Footer styles */
+/* ================================ Footer styles ================================ */
 footer {
   background-color: #000000;
   color: #ffffff;
@@ -724,8 +824,7 @@ footer {
     margin-bottom: 10px;
     margin-right: 0;
   }
-  br {
-  }
+
   .footer-right {
     flex-basis: 100%;
     justify-content: center;
