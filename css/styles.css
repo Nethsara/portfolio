@@ -724,7 +724,8 @@ footer {
     margin-bottom: 10px;
     margin-right: 0;
   }
-
+  br {
+  }
   .footer-right {
     flex-basis: 100%;
     justify-content: center;
