@@ -13,6 +13,35 @@ body {
   list-style: none;
 }
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+button {
+  font-family: inherit;
+  padding: 0.6em 1.3em;
+  font-weight: 900;
+  font-size: 18px;
+  border: 3px solid black;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em;
+}
+
+button:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em;
+}
+
+button:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0.05em 0.05em;
+}
+
+section {
+  border: 1px solid black;
+}
+
 /* Titles */
 .section-title {
   display: flex;
@@ -132,6 +161,10 @@ nav {
 }
 
 /* Start of home section */
+
+.hero-button {
+  background-color: #ffffff;
+}
 
 .section-home {
   background-color: #ffc700;
@@ -268,36 +301,40 @@ nav {
 /* Start Of About Section */
 
 .section-about {
-  background-color: #fff;
   padding: 20px;
+  background: #b2e99d;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
+.about-container {
+  max-width: 90vw;
+  margin: 100px auto;
 }
-
-.about-title {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 3vw;
-}
-
-.about-content {
+.about-card {
+  background: #fff;
+  border-radius: 20px;
+  filter: drop-shadow(8px 8px 0px #000);
+  padding: 20px;
+  border: 4px solid #000;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  padding: 0 100px 0;
+  justify-content: center;
+  flex-direction: column;
 }
-
-.about-content p {
+.about-card h1 {
+  margin: 45px;
+  font-size: 42px;
+  letter-spacing: 2px;
+}
+.about-card p {
+  padding: 0 100px;
+  line-height: 30px;
+  max-width: fit-content;
+  font-size: 18px;
   text-align: center;
-  margin-bottom: 20px;
-  font-size: 1.8vw;
-  line-height: 2.5vw;
 }
 
 .about-image {
+  align-items: center;
   text-align: center;
   margin-top: 20px;
   width: 400px;
@@ -312,6 +349,12 @@ nav {
 @media only screen and (max-width: 950px) {
   .about-content {
     padding: 0 50px 0;
+  }
+
+  .about-card p {
+    padding: 0;
+    line-height: 30px;
+    font-size: 18px;
   }
 }
 /* Start of skills section */
@@ -527,6 +570,14 @@ input[type="submit"] {
   margin: 20px;
 }
 
+.form_style {
+  outline: none;
+  border: 2px solid #000;
+  box-shadow: 3px 4px 0px 1px #000;
+  padding: 12px 10px;
+  border-radius: 1px;
+  font-size: 15px;
+}
 /* Contact Form Responsive */
 
 @media only screen and (min-width: 768px) {
