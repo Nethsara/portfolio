@@ -16,6 +16,10 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 button {
@@ -36,6 +40,45 @@ button:hover {
 button:active {
   transform: translate(0.05em, 0.05em);
   box-shadow: 0.05em 0.05em;
+}
+
+.titles {
+  background-color: #f6bc00;
+  font-family: inherit;
+  display: inline-block;
+  width: 150px;
+  margin: 20px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid black;
+  box-shadow: black 0.5vw 0.5vw;
+  transition: color 0.5s;
+  font-size: 17px;
+  font-weight: bold;
+  border-radius: 6px;
+  font-weight: 500;
+  color: black;
+}
+
+.titles:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: white;
+  height: 150px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.titles:before {
+  top: 100%;
+  left: 100%;
+  transition: all 0.7s;
+}
+
+.titles:hover:before {
+  top: -30px;
+  left: -30px;
 }
 
 section {
@@ -309,7 +352,7 @@ nav {
   max-width: 90vw;
   margin: 100px auto;
 }
-.about-card {
+.card {
   background: #fff;
   border-radius: 20px;
   filter: drop-shadow(8px 8px 0px #000);
@@ -320,12 +363,12 @@ nav {
   justify-content: center;
   flex-direction: column;
 }
-.about-card h1 {
+.card h1 {
   margin: 45px;
   font-size: 42px;
   letter-spacing: 2px;
 }
-.about-card p {
+.card p {
   padding: 0 100px;
   line-height: 30px;
   max-width: fit-content;
@@ -333,14 +376,14 @@ nav {
   text-align: center;
 }
 
-.about-image {
+.card-image {
   align-items: center;
   text-align: center;
   margin-top: 20px;
   width: 400px;
 }
 
-.about-image img {
+.card-image img {
   max-width: 100%;
 }
 
@@ -351,7 +394,7 @@ nav {
     padding: 0 50px 0;
   }
 
-  .about-card p {
+  .card p {
     padding: 0;
     line-height: 30px;
     font-size: 18px;
@@ -364,61 +407,79 @@ nav {
   padding: 40px 20px;
 }
 
-.section-skills > .container {
-  background-color: transparent;
+.skill-container {
+  flex-direction: column;
 }
 
-.skills-heading {
+.skill-box-container {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 40px;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 50px;
+  padding-top: 50px;
 }
 
-.skills-title h2 {
-  margin: 0;
+.skill-card {
+  width: 190px;
+  height: 254px;
+  background: #00ffa0;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 0.5vmin solid #05060f;
+  box-shadow: 0.4rem 0.4rem #05060f;
+  overflow: hidden;
 }
 
-.skills-content {
+.skill-block-content {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 0 -10px;
+  height: 100%;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.skills-box {
-  background-color: #fff;
-  margin: 0 10px 20px;
-  width: calc(33.33% - 20px);
-  height: auto;
-  box-shadow: black 0.5vw 0.5vw;
+.skill-plan {
+  color: #05060f;
+  font-size: 1.3rem;
+  line-height: 1.25;
+  font-weight: 700;
 }
 
-.skills-image {
-  text-align: center;
-  padding: 40px 10px 10px;
+.skill-value {
+  display: flex;
+  color: #05060f;
+  font-size: 1.8rem;
+  line-height: 1.25;
+  font-weight: 700;
 }
 
-.skills-image img {
-  max-width: 40%;
+.skill-note {
+  opacity: 0.8;
 }
 
-.skills-text {
-  padding: 20px;
-  text-align: center;
-  font-size: 1rem;
+#secondBox {
+  background: #ff968a;
 }
 
-.skills-text h3 {
-  margin-top: 0;
-  margin-bottom: 10px;
+#thirdBox {
+  background: #f1f332;
 }
 
+#forthBox {
+  background: #ffc901;
+}
+
+#fifthBox {
+  background: #3ec0b3;
+}
+
+#sixthBox {
+  background: #eeedde;
+}
 /* Skills Section Responsive */
 
 @media only screen and (max-width: 950px) {
-  .skills-box {
-    width: 100%;
+  .skill-box-container {
+    flex-direction: column;
   }
 }
 
