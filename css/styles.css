@@ -247,7 +247,8 @@ nav {
 
 .section-text h2 {
   font-size: 4vw;
-  margin: 0 0 40px 0;
+  padding-top: 25px;
+  padding-bottom: 40px;
   color: transparent;
   -webkit-text-stroke: 0.2vw black;
 }
@@ -295,7 +296,6 @@ nav {
     width: 100%;
     max-width: 400px;
     margin-top: 2vw;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
   }
 
   .section-image img {
@@ -384,7 +384,7 @@ nav {
 }
 
 .card-image img {
-  max-width: 100%;
+  max-width: 30vw;
 }
 
 /* About Section Responsive */
@@ -398,6 +398,11 @@ nav {
     padding: 0;
     line-height: 30px;
     font-size: 18px;
+  }
+  .card h1 {
+    margin: 45px;
+    font-size: 42px;
+    letter-spacing: normal;
   }
 }
 /* Start of skills section */
@@ -457,7 +462,7 @@ nav {
 }
 
 #secondBox {
-  background: #ff968a;
+  background: #ffaba2;
 }
 
 #thirdBox {
@@ -469,7 +474,7 @@ nav {
 }
 
 #fifthBox {
-  background: #3ec0b3;
+  background: #78efe3;
 }
 
 #sixthBox {
