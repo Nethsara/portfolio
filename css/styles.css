@@ -161,7 +161,7 @@ nav {
   display: none;
 }
 
-#menu-toggle:checked ~ .menu {
+#menu-toggle:checked~.menu {
   transform: scaleY(1);
 }
 
@@ -352,6 +352,7 @@ nav {
   max-width: 90vw;
   margin: 100px auto;
 }
+
 .card {
   background: #fff;
   border-radius: 20px;
@@ -363,11 +364,13 @@ nav {
   justify-content: center;
   flex-direction: column;
 }
+
 .card h1 {
   margin: 45px;
   font-size: 42px;
   letter-spacing: 2px;
 }
+
 .card p {
   padding: 0 100px;
   line-height: 30px;
@@ -399,12 +402,14 @@ nav {
     line-height: 30px;
     font-size: 18px;
   }
+
   .card h1 {
     margin: 45px;
     font-size: 42px;
     letter-spacing: normal;
   }
 }
+
 /* ================================ Start of skills section ================================ */
 
 .section-skills {
@@ -480,6 +485,7 @@ nav {
 #sixthBox {
   background: #eeedde;
 }
+
 /* Skills Section Responsive */
 
 @media only screen and (max-width: 950px) {
@@ -494,8 +500,9 @@ nav {
   padding: 100px;
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
+
 .resume-card {
   display: flex;
   position: relative;
@@ -605,9 +612,11 @@ nav {
 }
 
 .experience-div {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   gap: 40px;
   padding-left: 100px;
 }
@@ -615,6 +624,30 @@ nav {
 @media only screen and (max-width: 1133px) {
   .resume-container {
     flex-direction: column;
+    margin-bottom: 20px;
+    margin-left: 0 !important;
+  }
+
+  .education-container {
+    flex-direction: column;
+    gap: 0px;
+    padding-left: 0px;
+  }
+
+  #education-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #experiance-container {
+    display: flex !important;
+    flex-direction: column !important;
+    /* align-items: center; */
+  }
+
+  #resume-section {
+    display: flex !important;
+    flex-direction: column !important;
   }
 }
 
@@ -659,6 +692,7 @@ nav {
     flex-direction: column;
   }
 }
+
 /* ================================ Contact Section ================================ */
 
 .contact {
@@ -683,7 +717,7 @@ nav {
   background-color: #fefefe;
   display: flex;
   border: #000 2px solid;
-  width: 100%;
+  width: 80%;
   flex-direction: row;
   align-items: center;
 }
@@ -691,11 +725,11 @@ nav {
 .contact-image {
   width: 20%;
   height: auto;
-  padding: 100px;
+  padding: auto;
 }
 
 form {
-  width: 50%;
+  width: auto;
   padding: 20px;
 }
 
@@ -728,6 +762,7 @@ input[type="submit"] {
 
 .contact-container {
   background-color: transparent;
+  width: 100%;
 }
 
 .divider h2,
@@ -744,23 +779,36 @@ input[type="submit"] {
   border-radius: 1px;
   font-size: 15px;
 }
+
 /* Contact Form Responsive */
 
 @media only screen and (min-width: 768px) {
-  .contact-form {
-    flex-direction: row;
-  }
+
+
   .contact-image {
     width: 30%;
     padding: 50px;
   }
+
   form {
     width: 70%;
     padding: 50px;
   }
+
   input[type="submit"] {
     width: 20%;
     margin: 10px 40% 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .contact-form {
+    flex-direction: column;
+  }
+
+  .contact-image {
+    width: 40%;
+    margin-top: 50px;
   }
 }
 
@@ -811,14 +859,17 @@ footer {
     justify-content: center;
     flex-wrap: wrap;
   }
+
   .footer-middle {
     margin-top: 40px;
   }
+
   .footer-middle {
     margin-top: 20px;
     flex-basis: 100%;
     text-align: center;
   }
+
   .footer-middle a {
     display: block;
     margin-bottom: 10px;
