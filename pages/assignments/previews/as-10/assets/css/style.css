@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  background-color: #23252e;
+}
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10%;
+}
+.calc-body {
+  width: 275px;
+  height: 400px;
+  box-shadow: 0 8px 50px -7px black;
+  background: #3a4655;
+  border: #3a4655 1px solid;
+}
+.calc-screen {
+  padding: 1rem;
+}
+#calc-operation {
+  font-size: 1.3rem;
+  text-align: right;
+  color: #727b86;
+  padding-bottom: 0.5rem;
+}
+#calc-typed {
+  font-size: 2rem;
+  text-align: right;
+  color: #fff;
+}
+/*Calculator Buttons*/
+.calc-button-row {
+  display: table;
+}
+.calc-button-row button {
+  display: table-cell;
+  width: 25%;
+  background: #292d36;
+  color: #fff;
+  height: 65px;
+  font-size: 1.3rem;
+  border: none;
+  border-color: #3c4857;
+  border-width: 1px 1px 0px 0;
+  border-style: solid;
+}
+.calc-button-row button.ac {
+  color: #ff7665;
+}
+.calc-button-row button.opt {
+  color: #ffbc56;
+}
+
+.calc-button-row button:nth-child(4n) {
+  border-right: none;
+}
+.calc-button-row button:active {
+  position: relative;
+  top: 1px;
+}
+.calc-button-row button:hover {
+  background: #3e4b5c;
+}
+
+.history-panel {
+  width: 225px;
+  height: 400px;
+  background: #3a4655;
+  /* border-left: 1px solid gray; */
+  position: relative;
+}
+
+.history-head {
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 12px;
+  margin-left: 160px;
+  margin-top: 20px;
+  background-color: #3a4655;
+}
+
+.history-container {
+  background-color: transparent;
+  width: 225px;
+  height: 320px;
+  margin-top: 10px;
+  display: grid;
+  align-items: center;
+}
+.textfield {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  height: 70px;
+  border-bottom: 1px solid gray;
+  color: darkgray;
+  font-size: 23px;
+  font-weight: 600;
+  text-align: right;
+  font-family: sans-serif;
+}
+
+.material-symbols-sharp {
+  color: #fff;
+  background-color: transparent;
+  font-weight: 600;
+  position: absolute;
+  top: 15px;
+  right: 70px;
+}
