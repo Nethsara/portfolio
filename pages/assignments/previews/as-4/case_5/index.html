@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sliding Images</title>
+    <style>
+      main {
+        width: 400px;
+        height: 300px;
+        border: 2px solid red;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+
+        /* overflow: hidden;*/
+        overflow-x: hidden;
+        overflow-y: hidden;
+      }
+      main > section {
+        width: calc(400px * 4);
+        height: 300px;
+        border: 2px solid yellow;
+
+        display: flex;
+
+        animation-name: slider;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+
+      main > section > div {
+        width: 400px;
+        height: 300px;
+        border: 2px solid rgb(7, 35, 249);
+      }
+      @keyframes slider {
+        0%,
+        20% {
+          transform: translateX(-0%);
+        }
+        25%,
+        45% {
+          transform: translateX(-25%);
+        }
+        50%,
+        70% {
+          transform: translateX(-50%);
+        }
+        75%,
+        100% {
+          transform: translateX(-75%);
+        }
+        /*100%{
+                transform: translateX(-100%);
+            }*/
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section>
+        <div class="sli1">
+          <img src="../assets/images/slide1.png" alt="slide1.png" />
+        </div>
+        <div class="sli2">
+          <img src="../assets/images/slide2.png" alt="slide2.png" />
+        </div>
+        <div class="sli3">
+          <img src="../assets/images/slide3.png" alt="slide3.png" />
+        </div>
+        <div class="sli4">
+          <img src="../assets/images/slide4.png" alt="slide4.png" />
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment</title>
+    <style>
+      section {
+        width: 10px;
+        height: 10px;
+        border: 3px solid red;
+        border-radius: 100%;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        margin: auto;
+
+        animation-name: my-animation;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+      }
+      @keyframes my-animation {
+        from {
+          width: 10px;
+          height: 10px;
+        }
+        to {
+          width: 150px;
+          height: 150px;
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section></section>
+  </body>
+</html>

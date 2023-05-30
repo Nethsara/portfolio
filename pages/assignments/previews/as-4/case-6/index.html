@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Animation</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .hero {
+        width: 100%;
+        height: 100vh;
+        background-image: url(assets/sky.jpg);
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+
+      .road-cover {
+        width: 100%;
+        height: 200px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+      }
+
+      .road {
+        background-image: url(assets/road.jpg);
+        width: 500%;
+        height: 200px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: block;
+        animation-name: highway;
+        animation-iteration-count: infinite;
+        animation-duration: 5s;
+        animation-timing-function: linear;
+      }
+
+      @keyframes highway {
+        100% {
+          transform: translateX(-3000px);
+        }
+      }
+
+      .city-cover {
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+        position: absolute;
+        bottom: 200px;
+      }
+
+      .city {
+        background-image: url(assets/city.png);
+        width: 500%;
+        height: 200px;
+        position: absolute;
+        bottom: 0;
+        animation-name: city-animation;
+        animation-iteration-count: infinite;
+        animation-duration: 15s;
+        animation-timing-function: linear;
+      }
+
+      @keyframes city-animation {
+        100% {
+          transform: translateX(-2000px);
+        }
+      }
+
+      .car-wap {
+        width: 400px;
+        height: 200px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        bottom: 100px;
+      }
+
+      .car-img {
+        width: 400px;
+        height: 200px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+
+      .wheel {
+        width: 75px;
+        height: 75px;
+        z-index: 1;
+        position: absolute;
+        animation-name: wheel;
+        animation-iteration-count: infinite;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+      }
+
+      .wheel-01 {
+        left: 33px;
+        bottom: 15px;
+        position: absolute;
+      }
+
+      .wheel-02 {
+        bottom: 15px;
+        right: 47px;
+        position: absolute;
+      }
+
+      @keyframes wheel {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="hero">
+      <div class="road-cover">
+        <div class="road"></div>
+      </div>
+      <div class="city-cover">
+        <div class="city"></div>
+      </div>
+
+      <div class="car-wap">
+        <img class="car-img" src="assets/car.png" alt="car image" />
+        <img src="assets/wheel.png" class="wheel wheel-01" alt="wheel 1" />
+        <img src="assets/wheel.png" class="wheel wheel-02" alt="wheel 2" />
+      </div>
+    </section>
+  </body>
+</html>

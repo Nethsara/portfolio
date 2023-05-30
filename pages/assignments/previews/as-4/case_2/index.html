@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Transitions Assignment 02</title>
+</head>
+<body>
+<main>
+    <section>
+        <h1 style="color: #ffffff;">RWAD </h1>
+
+
+
+    </section>
+</main>
+
+</body>
+
+<style>
+    body {
+        background:dodgerblue;
+    }
+
+    main>section{
+        width: 400px;
+        height: 400px;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+    }
+
+    section::before{
+        content: "";
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        background: gray;
+        position: absolute;
+        border: solid white 20px;
+        border-top: 20px solid red;
+        border-radius: 100%;
+    }
+
+    main>section:hover::before{
+        transform: rotate(360deg);
+        transition: all 1s;
+    }
+
+    main>section>h1{
+        position: absolute;
+        font-size: 4em;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+        width: max-content;
+        height: max-content;
+    }
+</style>
+</html>

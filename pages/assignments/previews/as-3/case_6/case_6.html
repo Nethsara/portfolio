@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>case_6</title>
+    <link rel="stylesheet" href="../case_2/assets/css/normalize.css" />
+    <style>
+      section {
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+          "a a b c"
+          "d e f c"
+          "g h h c";
+      }
+
+      section > div:nth-child(1) {
+        grid-area: a;
+        background-color: red;
+      }
+
+      section > div:nth-child(2) {
+        grid-area: b;
+        background-color: green;
+      }
+
+      section > div:nth-child(3) {
+        grid-area: c;
+        background-color: orangered;
+      }
+
+      section > div:nth-child(4) {
+        grid-area: d;
+        background-color: purple;
+      }
+
+      section > div:nth-child(5) {
+        grid-area: e;
+        background-color: hotpink;
+      }
+
+      section > div:nth-child(6) {
+        grid-area: f;
+        background-color: blue;
+      }
+
+      section > div:nth-child(7) {
+        background-color: brown;
+      }
+
+      section > div:nth-child(8) {
+        background-color: gray;
+      }
+
+      section > div:nth-child(9) {
+        grid-area: g;
+        background-color: brown;
+      }
+
+      section > div:nth-child(10) {
+        grid-area: h;
+        background-color: rgb(47, 0, 128);
+      }
+
+      section > div:nth-child(11) {
+        background-color: rgb(215, 83, 57);
+      }
+
+      section > div:nth-child(12) {
+        background-color: rgb(47, 176, 21);
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </section>
+  </body>
+</html>

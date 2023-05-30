@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>case_2</title>
+    <link rel="stylesheet" href="assets/css/normalize.css" />
+    <link
+      rel="stylesheet"
+      href="assets/css/fontawesome-free-6.4.0-web/css/all.css"
+    />
+    <style>
+      header {
+        position: relative;
+        height: 60px;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+      }
+
+      .li {
+        display: inline-block;
+        padding: 0 30px 0 30px;
+        cursor: pointer;
+      }
+
+      #ul {
+        position: absolute;
+        right: 100px;
+        top: 0;
+        list-style: none;
+        color: black;
+      }
+
+      img {
+        width: 200px;
+        margin-left: 35px;
+      }
+
+      main {
+        position: relative;
+      }
+
+      main > nav {
+        width: 200px;
+        background-color: rgb(39, 39, 165);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        min-height: 500px;
+      }
+
+      main > nav > ul {
+        list-style: none;
+        color: aliceblue;
+        margin-top: 75px;
+      }
+
+      main > nav > ul > li {
+        padding: 15px 0 15px 0;
+        cursor: pointer;
+        font-size: 20px;
+      }
+
+      main > nav > ul > li > i {
+        padding-right: 10px;
+      }
+
+      article {
+        margin-left: 200px;
+        padding-left: 15px;
+        margin-top: 5px;
+      }
+
+      /* article > p {
+        margin-left: 200px;
+        padding-left: 20px;
+      } */
+
+      footer {
+        background-color: rgb(156, 145, 145);
+        height: 50px;
+        width: 100vw;
+        position: absolute;
+        bottom: 0;
+      }
+
+      footer > h3 {
+        position: absolute;
+        width: 150px;
+        left: calc(50vw - 75px);
+        color: white;
+      }
+
+      main > article > section {
+        height: 300px;
+        position: relative;
+      }
+
+      main > article > section > div {
+        display: inline;
+        position: absolute;
+        height: 100%;
+        width: calc(100% / 3);
+      }
+
+      main > article > section > div:nth-child(1) {
+        left: 0;
+        background-image: url("assets/images/img\ 1.avif");
+        background-size: cover;
+      }
+
+      main > article > section > div:nth-child(2) {
+        left: calc(100% / 3);
+        background-image: url("assets/images/img\ 2.jpg");
+        background-size: cover;
+      }
+
+      main > article > section > div:nth-child(3) {
+        left: calc((100% / 3) * 2);
+        background-image: url("assets/images/img\ 3.jpg");
+        background-size: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="https://www.ijse.lk/images/logos/ijse.png" alt="IJSE logo" />
+      <nav>
+        <ul id="ul">
+          <li class="li">Home</li>
+          <li class="li">Services</li>
+          <li class="li">Contact</li>
+          <li class="li">About us</li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <nav>
+        <ul>
+          <li><i class="fa-solid fa-house"></i>Home</li>
+          <li><i class="fa-solid fa-briefcase"></i>Services</li>
+          <li><i class="fa-solid fa-phone"></i>Contact</li>
+          <li><i class="fa-solid fa-address-card"></i>About us</li>
+        </ul>
+      </nav>
+      <article>
+        <section>
+          <div></div>
+          <div></div>
+          <div></div>
+        </section>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti
+          velit ipsum non, impedit soluta tempora. Alias excepturi ullam laborum
+          atque nisi veritatis quas ipsum, nobis delectus, esse inventore magnam
+          laudantium.
+        </p>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti
+          velit ipsum non, impedit soluta tempora. Alias excepturi ullam laborum
+          atque nisi veritatis quas ipsum, nobis delectus, esse inventore magnam
+          laudantium.
+        </p>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti
+          velit ipsum non, impedit soluta tempora. Alias excepturi ullam laborum
+          atque nisi veritatis quas ipsum, nobis delectus, esse inventore magnam
+          laudantium.
+        </p>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti
+          velit ipsum non, impedit soluta tempora. Alias excepturi ullam laborum
+          atque nisi veritatis quas ipsum, nobis delectus, esse inventore magnam
+          laudantium.
+        </p>
+      </article>
+    </main>
+
+    <footer>
+      <h3>Powerd by IJSE</h3>
+    </footer>
+  </body>
+</html>

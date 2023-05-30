@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>assigment</title>
+    <style>
+      div {
+        width: 50vw;
+        height: 50vh;
+        position: absolute;
+      }
+
+      div:first-child {
+        background-color: red;
+        left: 0;
+        top: 0;
+      }
+
+      div:nth-child(2) {
+        background-color: blue;
+        right: 0;
+        top: 0;
+      }
+
+      div:nth-child(3) {
+        background-color: yellow;
+        left: 0;
+        bottom: 0;
+      }
+
+      div:nth-child(4) {
+        background-color: rosybrown;
+        right: 0;
+        bottom: 0;
+      }
+
+      body > div:first-child > div {
+        width: 150px;
+        height: 150px;
+        background-color: white;
+        position: absolute;
+        left: calc(25vw - 75px);
+        top: calc(25vh - 75px);
+        border-radius: 100px;
+      }
+
+      body > div:nth-child(2) > div {
+        width: 150px;
+        height: 150px;
+        background-color: white;
+        position: absolute;
+        left: calc(25vw - 75px);
+        top: calc(25vh - 75px);
+        border-radius: 100px;
+      }
+
+      body > div:nth-child(3) > div {
+        width: 150px;
+        height: 150px;
+        background-color: white;
+        position: absolute;
+        left: calc(25vw - 75px);
+        top: calc(25vh - 75px);
+        border-radius: 100px;
+      }
+
+      body > div:nth-child(4) > div {
+        width: 150px;
+        height: 150px;
+        background-color: white;
+        position: absolute;
+        left: calc(25vw - 75px);
+        top: calc(25vh - 75px);
+        border-radius: 100px;
+      }
+
+      #first {
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        left: calc(75px - 25px);
+        top: calc(75px - 25px);
+      }
+
+      #second {
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        left: calc(75px - 25px);
+        top: calc(75px - 25px);
+      }
+
+      #third {
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        left: calc(75px - 25px);
+        top: calc(75px - 25px);
+      }
+
+      #fourth {
+        width: 50px;
+        height: 50px;
+        background-color: red;
+        left: calc(75px - 25px);
+        top: calc(75px - 25px);
+      }
+
+      #middle {
+        width: 150px;
+        height: 150px;
+        background-color: white;
+        position: absolute;
+        left: calc(50vw - 75px);
+        top: calc(50vh - 75px);
+        /* border-radius: 100px; */
+      }
+
+      #middle > div {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: absolute;
+        left: calc(75px - 50px);
+        top: calc(75px - 50px);
+        border-radius: 100px;
+      }
+
+      #half1 {
+        width: 150px;
+        height: 150px;
+        background-color: white;
+        border-radius: 100px;
+        position: absolute;
+        left: calc(50vw - 100px);
+        bottom: -80px;
+      }
+
+      #half2 {
+        width: 150px;
+        height: 150px;
+        background-color: white;
+        border-radius: 100px;
+        position: absolute;
+        left: calc(50vw - 100px);
+        top: -80px;
+      }
+
+      #half3 {
+        width: 150px;
+        height: 150px;
+        background-color: white;
+        border-radius: 100px;
+        position: absolute;
+        left: -70px;
+        top: -70px;
+      }
+
+      #half4 {
+        width: 150px;
+        height: 150px;
+        background-color: white;
+        border-radius: 100px;
+        position: absolute;
+        right: -70px;
+        bottom: -70px;
+      }
+
+      #half5 {
+        width: 150px;
+        height: 150px;
+        background-color: white;
+        border-radius: 100px;
+        position: absolute;
+        left: -70px;
+        bottom: -70px;
+      }
+
+      #half6 {
+        width: 150px;
+        height: 150px;
+        background-color: white;
+        border-radius: 100px;
+        position: absolute;
+        right: -70px;
+        top: -70px;
+      }
+
+      /* #A {
+        width: 150px;
+        height: 150px;
+        background-color: white;
+        position: absolute;
+      } */
+    </style>
+  </head>
+  <body>
+    <div>
+      <!-- <div id="A"></div> -->
+      <div><div id="first"></div></div>
+    </div>
+    <div>
+      <div><div id="second"></div></div>
+    </div>
+    <div>
+      <div><div id="third"></div></div>
+    </div>
+    <div>
+      <div><div id="fourth"></div></div>
+    </div>
+
+    <div id="middle"><div></div></div>
+    <div id="half1"></div>
+    <div id="half2"></div>
+    <div id="half3"></div>
+    <div id="half4"></div>
+    <div id="half5"></div>
+    <div id="half6"></div>
+  </body>
+</html>
