@@ -379,15 +379,40 @@ nav {
   text-align: center;
 }
 
-.card-image {
+.card-icons {
+  display: flex;
   align-items: center;
-  text-align: center;
+  justify-content: center;
   margin-top: 20px;
-  width: 400px;
 }
 
-.card-image img {
-  max-width: 30vw;
+.card-icons i {
+  font-size: 50px;
+  margin: 10px;
+}
+.card-icons i {
+  font-size: 50px;
+  margin: 10px;
+}
+
+.fa-js-square {
+  color: #f7df1e;
+}
+
+.fa-react {
+  color: #61dafb;
+}
+
+.fa-node-js {
+  color: #3c873a;
+}
+
+.fa-python {
+  color: #3572a5;
+}
+
+.fa-java {
+  color: #b07219;
 }
 
 /* About Section Responsive */
@@ -726,7 +751,7 @@ footer {
 
 .marquee {
   overflow: hidden;
-  padding: 0.5rem;
+  padding: 1rem;
   background: #dadafe;
   border: 0.1rem solid black;
 }
@@ -738,6 +763,7 @@ footer {
   white-space: nowrap;
   font-variant: small-caps;
   z-index: -1000;
+  font-size: 1.5rem;
 }
 .marquee span:hover {
   animation-play-state: paused;
