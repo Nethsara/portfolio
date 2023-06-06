@@ -577,8 +577,8 @@ nav {
   background-color: #0ff2bc;
   height: 100px;
   border: #000 2px solid;
-  border-bottom: none;
   align-items: center;
+  margin: 20px;
 }
 
 .contact-form {
@@ -816,7 +816,7 @@ q {
 }
 
 .marquee-content {
-  animation: scroll 120s linear infinite;
+  animation: marquee 120s linear infinite;
 }
 .marquee-content {
   flex-shrink: 0;
