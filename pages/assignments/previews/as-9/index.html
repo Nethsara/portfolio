@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background-color: black;
+      }
+      .div {
+        width: 70px;
+        height: 20px;
+        position: relative;
+        left: 350px;
+        top: 300px;
+        float: left;
+        background-color: black;
+        margin: 0 0 0 5px;
+        border: 2px solid black;
+      }
+      .btn {
+        width: 70px;
+        height: 40px;
+        border-radius: 10px;
+      }
+      .start-btn,
+      .stop-btn {
+        width: 100px;
+        height: 40px;
+        border-radius: 10px;
+        font-size: 16px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        margin: 0 10px;
+      }
+
+      .btn-container {
+        position: absolute;
+        left: 700px;
+        top: 250px;
+      }
+      .stop-btn {
+        background-color: #f44336;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="btn-container">
+      <button class="start-btn" onclick="startLights()">START</button>
+      <button class="stop-btn" onclick="stopLights()">STOP</button>
+    </div>
+
+    <audio src="assets/audio/audio.mp3" id="audio-kr"></audio>
+    <section id="light-panel">
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+    </section>
+    <script
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      let lightNumber = 0;
+      let direction = 1;
+      const lights = $(".div");
+      let interval;
+
+      const startLights = () => {
+        $("#audio-kr")[0].play();
+        interval = setInterval(() => {
+          lights.css("background-color", "black");
+          lights.eq(lightNumber).css("background-color", "red");
+          if (lightNumber > 0) {
+            lights.eq(lightNumber - 1).css("background-color", "pink");
+          }
+          if (lightNumber < 6) {
+            lights.eq(lightNumber + 1).css("background-color", "pink");
+          }
+          if (lightNumber === 6) {
+            direction = -1;
+          } else if (lightNumber === 0) {
+            direction = 1;
+          }
+          lightNumber += direction;
+        }, 100);
+      };
+
+      const stopLights = () => {
+        $("#audio-kr")[0].pause();
+        clearInterval(interval);
+        lights.css("background-color", "black");
+        lightNumber = 0;
+      };
+    </script>
+  </body>
+</html>
