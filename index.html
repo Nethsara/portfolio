@@ -47,6 +47,7 @@
       integrity="sha384-GJwEOz+Uvyr+LW1mG9WOxnKSkp33oNmFefd8FxWNAoV7aDTdKugoMv7uA+ho/9M7"
       crossorigin="anonymous"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
   <body>
     <header class="header">
@@ -68,7 +69,7 @@
     </header>
 
     <section class="section-home" id="section-home">
-      <div class="section-content">
+      <div class="section-content" data-aos="fade-up">
         <div class="section-text">
           <h1>Nethsara Siyum</h1>
           <h2>Software Engineer</h2>
@@ -80,7 +81,7 @@
             <i class="fa fa-facebook"></i>
           </div>
         </div>
-        <div class="section-image">
+        <div class="section-image" data-aos="fade-up">
           <img src="assets/img/profileImage.png" alt="Profile Image" />
         </div>
       </div>
@@ -96,7 +97,7 @@
 
     <section class="section-about" id="section-about">
       <div class="about-container">
-        <div class="card">
+        <div class="card" data-aos="fade-up">
           <h1>About Me</h1>
           <p>
             Hi, I'm <b>Nethsara</b>! I'm a Software Engineer living in the town
@@ -137,7 +138,7 @@
     <section class="section-skills" id="section-skills">
       <div class="container skill-container">
         <div class="skill-box-container">
-          <div class="skill-box">
+          <div class="skill-box" data-aos="fade-up">
             <div class="skill-card" id="secondBox">
               <div class="skill-block-content">
                 <i class="material-icons" style="font-size: 48px">science</i>
@@ -153,7 +154,7 @@
               </div>
             </div>
           </div>
-          <div class="skill-box">
+          <div class="skill-box" data-aos="fade-up">
             <div class="skill-card" id="firstBox">
               <div class="skill-block-content">
                 <i class="material-icons" style="font-size: 48px">tab</i>
@@ -169,7 +170,7 @@
               </div>
             </div>
           </div>
-          <div class="skill-box">
+          <div class="skill-box" data-aos="fade-up">
             <div class="skill-card" id="thirdBox">
               <div class="skill-block-content">
                 <i class="material-icons" style="font-size: 48px">terminal</i>
@@ -187,7 +188,7 @@
           </div>
         </div>
         <div class="skill-box-container">
-          <div class="skill-box">
+          <div class="skill-box" data-aos="fade-up">
             <div class="skill-card" id="forthBox">
               <div class="skill-block-content">
                 <i class="material-icons" style="font-size: 48px">cloud</i>
@@ -202,7 +203,7 @@
               </div>
             </div>
           </div>
-          <div class="skill-box">
+          <div class="skill-box" data-aos="fade-up">
             <div class="skill-card" id="fifthBox">
               <div class="skill-block-content">
                 <i class="material-icons" style="font-size: 48px">bug_report</i>
@@ -217,7 +218,7 @@
               </div>
             </div>
           </div>
-          <div class="skill-box">
+          <div class="skill-box" data-aos="fade-up">
             <div class="skill-card" id="sixthBox">
               <div class="skill-block-content">
                 <i class="material-icons" style="font-size: 48px"
@@ -240,7 +241,7 @@
 
     <section class="section-quote">
       <div class="blue-back">
-        <blockquote>
+        <blockquote data-aos="fade-up">
           You know all those amazing ideas you have? Let's bring them to life.
         </blockquote>
       </div>
@@ -267,7 +268,7 @@
     <section class="projects" id="section-projects">
       <div class="container"></div>
       <div class="about-container">
-        <div class="card project-card">
+        <div class="card project-card" data-aos="fade-up">
           <iframe
             src="https://www.youtube.com/embed/I_FpcadnjPY"
             title="Introducing CodeBoost: The AI-Powered Code Completion Extension for Visual Studio Code"
@@ -284,7 +285,7 @@
             <button>View More >>></button>
           </div>
         </div>
-        <div class="card project-card">
+        <div class="card project-card" data-aos="fade-up">
           <iframe
             src="https://www.youtube.com/embed/Hr-levlqPHw"
             title="Schola: Overview &amp; Key Features - JavaFX LMS"
@@ -326,14 +327,14 @@
 
     <section class="contact" id="section-contacts">
       <div class="container contact-container">
-        <div class="divider">
+        <div class="divider" data-aos="fade-up">
           <h2>Interested in working with me?</h2>
           <h4>
             Let’s start a conversation! Drop your message below with some info
             about your project...
           </h4>
         </div>
-        <div class="contact-form">
+        <div class="contact-form" data-aos="fade-up">
           <img
             src="/assets/img/phone.svg"
             alt="Contact Image"
@@ -398,5 +399,9 @@
         <p>&copy; Made With ❤️ By Siyum.</p>
       </div>
     </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
