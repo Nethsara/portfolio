@@ -8,6 +8,10 @@ html {
   scroll-behavior: smooth;
 }
 
+button {
+  cursor: pointer;
+}
+
 body {
   display: flex;
   flex-direction: column;
