@@ -251,6 +251,44 @@ nav {
 
 /* ================================  Start of home section ================================ */
 
+.section-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  transition: transform 0.3s;
+}
+
+.section-icons a:hover {
+  transform: scale(1.2);
+}
+
+.section-text h1,
+.section-text h2 {
+  transition: transform 0.3s;
+}
+
+.section-text h1:hover,
+.section-text h2:hover {
+  animation: bounce 0.5s;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 .hero-button {
   background-color: #ffffff;
 }
