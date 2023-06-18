@@ -468,6 +468,14 @@ nav {
   text-align: center;
 }
 
+.card-icons i {
+  transition: transform 0.3s;
+}
+
+.card-icons i:hover {
+  transform: scale(1.2);
+}
+
 .card-icons {
   display: flex;
   align-items: center;
