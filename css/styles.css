@@ -600,6 +600,13 @@ nav {
   box-shadow: 0.4rem 0.4rem #05060f;
   overflow: hidden;
 }
+.skill-card {
+  transition: transform 0.3s;
+}
+
+.skill-card:hover {
+  transform: scale(1.2);
+}
 
 .skill-block-content {
   display: flex;
