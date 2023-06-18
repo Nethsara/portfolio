@@ -148,13 +148,52 @@ nav {
   color: #000000;
 }
 
-.menu:hover a {
-  opacity: 0.4;
+.menu li {
+  list-style: none;
+  transition: 0.5s;
 }
 
-.menu a:hover {
+.menu li a {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+
+.menu:hover li a {
+  transform: scale(1.5);
+  opacity: 0.2;
+  filter: blur(5px);
+}
+
+.menu li a:hover {
+  transform: scale(2);
   opacity: 1;
+  filter: blur(0);
+  text-decoration: none;
   color: #fff;
+}
+
+.menu li a:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  transition: 0.5s;
+  transform-origin: right;
+  transform: scaleX(0);
+  z-index: -1;
+}
+
+.menu li a:hover:before {
+  transition: transform 0.5s;
+  transform-origin: left;
+  transform: scaleX(1);
 }
 
 .menu-icon {
