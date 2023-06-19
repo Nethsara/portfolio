@@ -19,6 +19,7 @@ body {
   font-size: 14px;
   line-height: 20px;
   list-style: none;
+  overflow-x: hidden;
 }
 
 .container {
