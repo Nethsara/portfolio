@@ -1,11 +1,9 @@
-import { Customer } from "../models/customer.js";
-import { Item } from "../models/item.js";
-
-export class DB {
+class DB {
   constructor() {
     this.item = "ITEM";
     this.customer = "CUSTOMER";
     this.order = "ORDER";
+    this.orderDetails = "ORDER_DETAILS";
   }
 
   async save(obj) {
@@ -14,7 +12,9 @@ export class DB {
         ? this.customer
         : obj instanceof Item
         ? this.item
-        : this.order;
+        : obj instanceof Order
+        ? this.order
+        : this.orderDetails;
     const data = localStorage.getItem(key);
     const arr = JSON.parse(data) || [];
     arr.push(obj);
@@ -28,14 +28,18 @@ export class DB {
         ? this.customer
         : obj instanceof Item
         ? this.item
-        : this.order;
+        : obj instanceof Order
+        ? this.order
+        : this.orderDetails;
     const data = localStorage.getItem(key);
     const arr = JSON.parse(data) || [];
-    const item = arr.find((i) => i.i_id === obj.i_id || i.c_id === obj.c_id);
-    if (item) {
-      Object.assign(item, obj);
+    const index = arr.findIndex((v) => {
+      return obj instanceof Customer ? v.id === obj.id : v.code === obj.code;
+    });
+    if (index !== -1) {
+      arr[index] = obj;
       localStorage.setItem(key, JSON.stringify(arr));
-      return item;
+      return index;
     }
   }
 
@@ -45,14 +49,15 @@ export class DB {
         ? this.customer
         : obj instanceof Item
         ? this.item
-        : this.order;
+        : obj instanceof Order
+        ? this.order
+        : this.orderDetails;
+
     const data = localStorage.getItem(key);
     const arr = JSON.parse(data) || [];
+
     const index = arr.findIndex((v) => {
-      console.log(v, obj.i_id);
-      return obj instanceof Customer
-        ? v._c_id === obj._c_id
-        : v._i_id === obj.i_id;
+      return obj instanceof Customer ? v.id === obj.id : v.code === obj.code;
     });
     if (index !== -1) {
       arr.splice(index, 1);
@@ -68,7 +73,9 @@ export class DB {
         ? this.customer
         : obj instanceof Item
         ? this.item
-        : this.order;
+        : obj instanceof Order
+        ? this.order
+        : this.orderDetails;
     const data = localStorage.getItem(key);
     return JSON.parse(data) || [];
   }
@@ -79,9 +86,11 @@ export class DB {
         ? this.customer
         : obj instanceof Item
         ? this.item
-        : this.order;
+        : obj instanceof Order
+        ? this.order
+        : this.orderDetails;
     const data = localStorage.getItem(key);
     const arr = JSON.parse(data) || [];
-    return arr.find((item) => item.i_id === id || item.c_id === id);
+    return arr.find((item) => item.code === id || item.id === id);
   }
 }
