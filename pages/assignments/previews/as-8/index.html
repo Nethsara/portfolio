@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript Queue Demo</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+        font-family: Arial, sans-serif;
+      }
+
+      .queue {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .queue-item {
+        padding: 10px;
+        border-radius: 5px;
+        background-color: red;
+        color: white;
+        text-align: center;
+      }
+
+      .controls {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .btn {
+        padding: 8px 12px;
+        background-color: #3d3b1b;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .btn:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="queue"></div>
+      <div class="controls">
+        <button class="btn" id="enqueueBtn">Enqueue</button>
+        <button class="btn" id="dequeueBtn">Dequeue</button>
+      </div>
+    </div>
+
+    <script>
+      const queue = [];
+
+      function renderQueue() {
+        const queueContainer = document.querySelector(".queue");
+        queueContainer.innerHTML = "";
+        queue.forEach((item) => {
+          queueContainer.appendChild(item);
+        });
+      }
+
+      const enqueueBtn = document.querySelector("#enqueueBtn");
+      enqueueBtn.addEventListener("click", () => {
+        const queueItem = document.createElement("div");
+        queueItem.className = "queue-item";
+        queueItem.style = `background-color:${generateRandomColor()}`;
+        queueItem.innerText = queue.length + 1;
+        queue.push(queueItem);
+        renderQueue();
+      });
+
+      const dequeueBtn = document.querySelector("#dequeueBtn");
+      dequeueBtn.addEventListener("click", () => {
+        if (queue.length > 0) {
+          queue.shift();
+          renderQueue();
+        }
+      });
+
+      function generateRandomColor() {
+        const red = Math.floor(Math.random() * 256);
+        const green = Math.floor(Math.random() * 256);
+        const blue = Math.floor(Math.random() * 256);
+
+        return `rgb(${red}, ${green}, ${blue})`;
+      }
+    </script>
+  </body>
+</html>
