@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .container ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+      }
+
+      .container ul li {
+        width: 150px;
+        height: 150px;
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        font-size: 1.8em;
+        color: #000;
+      }
+
+      .container ul li img {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+      }
+
+      .btn-container {
+        margin-top: 100px;
+      }
+
+      .btn-container button {
+        font-size: 2em;
+        padding: 10px 20px;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="container">
+      <ul></ul>
+      <div class="btn-container">
+        <button type="button" id="btnStart"><i class="fas fa-play"></i></button>
+        <button type="button" id="btnStop"><i class="fas fa-stop"></i></button>
+      </div>
+    </section>
+
+    <script src="assets/lib/jquery-3.6.4.min.js"></script>
+    <script>
+      let queArray = ["A", "B", "C", "D", "E", "F"];
+      let interval = null;
+
+      $("#btnStart").on("click", () => {
+        interval = setInterval(setList, 800);
+      });
+      $("#btnStop").on("click", () => {
+        stopAnimate();
+        clearInterval(interval);
+      });
+
+      let enqueue = () => {
+        queArray.unshift(queArray.pop());
+      };
+      const stopAnimate = () => {
+        $(".container ul li img").remove();
+        $(".container ul li").append("<img src='assets/images/giphy.png'>");
+      };
+
+      const setList = () => {
+        $(".container ul li").remove();
+
+        queArray.map((value) => {
+          $(".container ul").append(
+            "<li>" + value + "<img src='assets/gif/giphy.gif'>" + "</li>"
+          );
+        });
+        enqueue();
+      };
+      setList();
+      stopAnimate();
+    </script>
+  </body>
+</html>
