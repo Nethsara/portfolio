@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignments</title>
+    <style>
+      html {
+        box-sizing: border-box;
+        font-family: "Open Sans", sans-serif;
+      }
+
+      body {
+        background-color: #ffc700;
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+
+      .background {
+        position: relative;
+        width: 100%;
+      }
+
+      .background::after {
+        content: "";
+        height: 350px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+      }
+
+      @media (min-width: 900px) {
+        .background {
+          padding: 0 0 25px;
+        }
+      }
+
+      .container {
+        margin: 0 auto;
+        padding: 50px 0 0;
+        max-width: 960px;
+        width: 100%;
+      }
+
+      .panel {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 15px 25px;
+        position: relative;
+        width: 100%;
+        margin-top: 50px;
+      }
+
+      .assignment-table {
+        border: black 1px solid;
+        display: flex;
+        flex-direction: column;
+      }
+
+      @media (min-width: 900px) {
+        .assignment-table {
+          flex-direction: row;
+        }
+      }
+
+      .assignment-table * {
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .assignment-plan {
+        border-bottom: 1px solid #e1f1ff;
+        padding: 25px;
+      }
+
+      .assignment-plan:last-child {
+        border-bottom: none;
+      }
+
+      @media (min-width: 900px) {
+        .assignment-plan {
+          border-bottom: none;
+          border-right: 1px solid #e1f1ff;
+          flex-basis: 100%;
+          padding: 25px 50px;
+        }
+
+        .assignment-plan:last-child {
+          border-right: none;
+        }
+      }
+
+      .assignment-img {
+        margin-bottom: 25px;
+        max-width: 100%;
+        height: 100px;
+      }
+
+      .assignment-header {
+        color: #000000;
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
+
+      .assignment-features {
+        font-weight: 600;
+        letter-spacing: 1px;
+        margin: 50px 0 25px;
+        list-style-type: none;
+      }
+
+      .assignment-features-item {
+        border-top: 1px solid #e1f1ff;
+        font-size: 12px;
+        line-height: 1.5;
+        padding: 15px 0;
+      }
+
+      .button-show {
+        border: 1px solid #000000;
+        border-radius: 10px;
+        color: #000000;
+        display: inline-block;
+        margin: 25px 0;
+        padding: 15px 35px;
+        text-decoration: none;
+        transition: all 150ms ease-in-out;
+      }
+
+      .button-show:hover,
+      .button-show:focus {
+        background-color: #e1f1ff;
+      }
+    </style>
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav>
+        <div class="logo">
+          <a href="index.html">SIYUM</a>
+        </div>
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        <ul class="menu">
+          <li><a href="https://siyum.me/#section-home">Home</a></li>
+          <li><a href="https://siyum.me/#section-about">About</a></li>
+          <li><a href="https://siyum.me/#section-skills">Services</a></li>
+          <li><a href="https://siyum.me/#section-projects">Projects</a></li>
+          <li><a href="#">Assignments</a></li>
+          <li><a href="https://siyum.me/#section-contacts">Contacts</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="background">
+      <div class="container">
+        <div class="panel assignment-table">
+          <div class="assignment-plan">
+            <img
+              src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*NRHmmFqALVkPk4FzlZhI-g.png"
+              alt=""
+              class="assignment-img"
+            />
+            <h2 class="assignment-header">AI Summarizer</h2>
+            <ul class="assignment-features">
+              <li class="assignment-features-item">
+                This will use AI to summarize the article that you are giving.
+              </li>
+            </ul>
+            <a
+              href="https://medium.com/stackademic/ai-summarizer-nodejs-project-f39ffdd6c1f9"
+              class="button-show"
+              >Show</a
+            >
+          </div>
+
+          <!-- <div class="assignment-plan">
+            <a href="https://siyum.me">
+              <img
+                src="/pages/assignments/images/ss2.jpeg"
+                alt=""
+                class="assignment-img"
+              />
+            </a>
+            <h2 class="assignment-header">Assignment 2</h2>
+            <ul class="assignment-features">
+              <li class="assignment-features-item">Portfolio</li>
+            </ul>
+            <a href="https://github.com/Nethsara/portfolio" class="button-show"
+              >SHOW</a
+            >
+          </div>
+
+          <div class="assignment-plan">
+            <img
+              src="/pages/assignments/images/ss3.jpeg"
+              alt=""
+              class="assignment-img"
+            />
+            <h2 class="assignment-header">Assignment 3</h2>
+            <ul class="assignment-features">
+              <li class="assignment-features-item">CSS Assignment</li>
+            </ul>
+            <a href="/pages/assignments/previews/as-3/" class="button-show"
+              >SHOW</a
+            >
+          </div> -->
+        </div>
+        <!-- <div class="panel assignment-table">
+          <div class="assignment-plan">
+            <img
+              src="/pages/assignments/images/ss4.png"
+              alt=""
+              class="assignment-img"
+            />
+            <h2 class="assignment-header">Assignment 4</h2>
+            <ul class="assignment-features">
+              <li class="assignment-features-item">Animations Assignment</li>
+            </ul>
+            <a href="/pages/assignments/previews/as-4/" class="button-show"
+              >SHOW</a
+            >
+          </div>
+
+          <div class="assignment-plan">
+            <img
+              src="/pages/assignments/images/ss2.jpeg"
+              alt=""
+              class="assignment-img"
+            />
+            <h2 class="assignment-header">Assignment 5</h2>
+            <ul class="assignment-features">
+              <li class="assignment-features-item">Responsive Design</li>
+            </ul>
+            <a href="https://siyum.me" class="button-show">SHOW</a>
+          </div>
+
+          <div class="assignment-plan">
+            <img
+              src="/pages/assignments/images/ss7.png"
+              alt=""
+              class="assignment-img"
+            />
+            <h2 class="assignment-header">Assignment 6</h2>
+            <ul class="assignment-features">
+              <li class="assignment-features-item">POS System - MPA</li>
+            </ul>
+            <a
+              href="https://github.com/Nethsara/web-pos/tree/b693ae60b4187b05ec9d787b029edd1c37c2bcb3"
+              class="button-show"
+              >SHOW</a
+            >
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </body>
+</html>
