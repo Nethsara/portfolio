@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Story</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #222;
+      font-family: Georgia, serif;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    a {
+      color: #ffffcc;
+      text-decoration: none;
+      -webkit-transition: 0.5s;
+      -moz-transition: 0.5s;
+      -o-transition: 0.5s;
+      -ms-transition: 0.5s;
+      transition: 0.5s;
+    }
+    a:hover,
+    a.selected {
+      color: #ffcc00;
+    }
+
+    h1,
+    h2,
+    h4,
+    h5,
+    h6 {
+      text-align: center;
+      color: #ccc;
+      text-shadow: #000 1px 1px 2px;
+      margin-bottom: 5px;
+    }
+    h1 {
+      font-size: 18px;
+    }
+    h2 {
+      font-size: 14px;
+    }
+    .sociales {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #timeline {
+      width: 500px;
+      height: 600px;
+      overflow: hidden;
+      margin: 40px auto;
+      position: relative;
+      background: url("http://www.csslab.cl/ejemplos/timelinr/latest/images/dot.gif")
+        3px top repeat-y;
+    }
+    #dates {
+      width: 100px;
+      height: 600px;
+      overflow: hidden;
+      float: left;
+    }
+    #dates li {
+      list-style: none;
+      width: 100px;
+      height: 100px;
+      line-height: 100px;
+      font-size: 24px;
+      padding-left: 10px;
+      background: url("http://www.csslab.cl/ejemplos/timelinr/latest/images/biggerdot.png")
+        left center no-repeat;
+    }
+    #dates a {
+      line-height: 38px;
+      padding-bottom: 10px;
+    }
+    #dates .selected {
+      font-size: 38px;
+    }
+
+    #issues {
+      width: 400px;
+      height: 600px;
+      overflow: hidden;
+      float: left;
+    }
+    #issues li {
+      max-width: 300px;
+      width: 400px;
+      height: 600px;
+      list-style: none;
+      text-align: center;
+    }
+    #issues li.selected img {
+      -webkit-transform: scale(1.1, 1.1);
+      -moz-transform: scale(1.1, 1.1);
+      -o-transform: scale(1.1, 1.1);
+      -ms-transform: scale(1.1, 1.1);
+      transform: scale(1.1, 1.1);
+    }
+    #issues li img {
+      width: 200px;
+      margin: 10px 30px 10px 50px;
+      -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)"; /* IE 8 */
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF); /* IE 6 & 7 */
+      zoom: 1;
+      -webkit-transition: all 2s ease-in-out;
+      -moz-transition: all 2s ease-in-out;
+      -o-transition: all 2s ease-in-out;
+      -ms-transition: all 2s ease-in-out;
+      transition: all 2s ease-in-out;
+      -webkit-transform: scale(0.7, 0.7);
+      -moz-transform: scale(0.7, 0.7);
+      -o-transform: scale(0.7, 0.7);
+      -ms-transform: scale(0.7, 0.7);
+      transform: scale(0.7, 0.7);
+    }
+    #issues li h1 {
+      color: #ffcc00;
+      font-size: 48px;
+      text-align: center;
+      text-shadow: #000 1px 1px 2px;
+    }
+    #issues li p {
+      font-size: 14px;
+      margin: 10px 20px;
+      font-weight: normal;
+      line-height: 22px;
+      text-shadow: #000 1px 1px 2px;
+    }
+
+    #grad_top,
+    #grad_bottom {
+      width: 500px;
+      height: 80px;
+      position: absolute;
+    }
+    #grad_top {
+      top: 0;
+      background: url("http://www.csslab.cl/ejemplos/timelinr/latest/images/grad_top.png")
+        repeat-x;
+    }
+    #grad_bottom {
+      bottom: 0;
+      background: url("http://www.csslab.cl/ejemplos/timelinr/latest/images/grad_bottom.png")
+        repeat-x;
+    }
+
+    #next,
+    #prev {
+      position: absolute;
+      left: 45%;
+      font-size: 70px;
+      width: 38px;
+      height: 22px;
+      background-position: 0 -44px;
+      background-repeat: no-repeat;
+      text-indent: -9999px;
+      overflow: hidden;
+    }
+    #next:hover,
+    #prev:hover {
+      background-position: 0 0;
+    }
+    #next {
+      bottom: 0;
+      background-image: url("http://www.csslab.cl/ejemplos/timelinr/latest/images/next_v.png");
+    }
+    #prev {
+      top: 0;
+      background-image: url("http://www.csslab.cl/ejemplos/timelinr/latest/images/prev_v.png");
+    }
+    #next.disabled,
+    #prev.disabled {
+      opacity: 0.2;
+    }
+  </style>
+  <body>
+    <div id="timeline">
+      <ul id="dates">
+        <li><a href="#1900" class="selected">1900</a></li>
+        <li><a href="#1930">1930</a></li>
+        <li><a href="#1944">1944</a></li>
+        <li><a href="#1950">1950</a></li>
+        <li><a href="#1971">1971</a></li>
+        <li><a href="#1977">1977</a></li>
+        <li><a href="#1989">1989</a></li>
+        <li><a href="#1999">1999</a></li>
+        <li><a href="#2001">2001</a></li>
+        <li><a href="#2011">2011</a></li>
+      </ul>
+      <ul id="issues">
+        <li id="1900" class="selected">
+          <img
+            src="http://www.csslab.cl/ejemplos/timelinr/latest/images/1.png"
+          />
+          <h1>1900</h1>
+          <p>
+            Donec semper quam scelerisque tortor dictum gravida. In hac
+            habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit,
+            sem diam ultrices mauris, eu consequat purus metus eu velit. Proin
+            metus odio, aliquam eget molestie nec, gravida ut sapien. Phasellus
+            quis est sed turpis sollicitudin venenatis sed eu odio. Praesent
+            eget neque eu eros interdum malesuada non vel leo. Sed fringilla
+            porta ligula.
+          </p>
+        </li>
+        <li id="1930">
+          <img
+            src="http://www.csslab.cl/ejemplos/timelinr/latest/images/2.png"
+          />
+          <h1>1930</h1>
+          <p>
+            Donec semper quam scelerisque tortor dictum gravida. In hac
+            habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit,
+            sem diam ultrices mauris, eu consequat purus metus eu velit. Proin
+            metus odio, aliquam eget molestie nec, gravida ut sapien. Phasellus
+            quis est sed turpis sollicitudin venenatis sed eu odio. Praesent
+            eget neque eu eros interdum malesuada non vel leo. Sed fringilla
+            porta ligula.
+          </p>
+        </li>
+        <li id="1944">
+          <img
+            src="http://www.csslab.cl/ejemplos/timelinr/latest/images/3.png"
+          />
+          <h1>1944</h1>
+          <p>
+            Donec semper quam scelerisque tortor dictum gravida. In hac
+            habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit,
+            sem diam ultrices mauris, eu consequat purus metus eu velit. Proin
+            metus odio, aliquam eget molestie nec, gravida ut sapien. Phasellus
+            quis est sed turpis sollicitudin venenatis sed eu odio. Praesent
+            eget neque eu eros interdum malesuada non vel leo. Sed fringilla
+            porta ligula.
+          </p>
+        </li>
+        <li id="1950">
+          <img
+            src="http://www.csslab.cl/ejemplos/timelinr/latest/images/4.png"
+          />
+          <h1>1950</h1>
+          <p>
+            Donec semper quam scelerisque tortor dictum gravida. In hac
+            habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit,
+            sem diam ultrices mauris, eu consequat purus metus eu velit. Proin
+            metus odio, aliquam eget molestie nec, gravida ut sapien. Phasellus
+            quis est sed turpis sollicitudin venenatis sed eu odio. Praesent
+            eget neque eu eros interdum malesuada non vel leo. Sed fringilla
+            porta ligula.
+          </p>
+        </li>
+        <li id="1971">
+          <img
+            src="http://www.csslab.cl/ejemplos/timelinr/latest/images/5.png"
+          />
+          <h1>1971</h1>
+          <p>
+            Donec semper quam scelerisque tortor dictum gravida. In hac
+            habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit,
+            sem diam ultrices mauris, eu consequat purus metus eu velit. Proin
+            metus odio, aliquam eget molestie nec, gravida ut sapien. Phasellus
+            quis est sed turpis sollicitudin venenatis sed eu odio. Praesent
+            eget neque eu eros interdum malesuada non vel leo. Sed fringilla
+            porta ligula.
+          </p>
+        </li>
+        <li id="1977">
+          <img
+            src="http://www.csslab.cl/ejemplos/timelinr/latest/images/6.png"
+          />
+          <h1>1977</h1>
+          <p>
+            Donec semper quam scelerisque tortor dictum gravida. In hac
+            habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit,
+            sem diam ultrices mauris, eu consequat purus metus eu velit. Proin
+            metus odio, aliquam eget molestie nec, gravida ut sapien. Phasellus
+            quis est sed turpis sollicitudin venenatis sed eu odio. Praesent
+            eget neque eu eros interdum malesuada non vel leo. Sed fringilla
+            porta ligula.
+          </p>
+        </li>
+        <li id="1989">
+          <img
+            src="http://www.csslab.cl/ejemplos/timelinr/latest/images/7.png"
+          />
+          <h1>1989</h1>
+          <p>
+            Donec semper quam scelerisque tortor dictum gravida. In hac
+            habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit,
+            sem diam ultrices mauris, eu consequat purus metus eu velit. Proin
+            metus odio, aliquam eget molestie nec, gravida ut sapien. Phasellus
+            quis est sed turpis sollicitudin venenatis sed eu odio. Praesent
+            eget neque eu eros interdum malesuada non vel leo. Sed fringilla
+            porta ligula.
+          </p>
+        </li>
+        <li id="1999">
+          <img
+            src="http://www.csslab.cl/ejemplos/timelinr/latest/images/8.png"
+          />
+          <h1>1999</h1>
+          <p>
+            Donec semper quam scelerisque tortor dictum gravida. In hac
+            habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit,
+            sem diam ultrices mauris, eu consequat purus metus eu velit. Proin
+            metus odio, aliquam eget molestie nec, gravida ut sapien. Phasellus
+            quis est sed turpis sollicitudin venenatis sed eu odio. Praesent
+            eget neque eu eros interdum malesuada non vel leo. Sed fringilla
+            porta ligula.
+          </p>
+        </li>
+        <li id="2001">
+          <img
+            src="http://www.csslab.cl/ejemplos/timelinr/latest/images/9.png"
+          />
+          <h1>2001</h1>
+          <p>
+            Donec semper quam scelerisque tortor dictum gravida. In hac
+            habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit,
+            sem diam ultrices mauris, eu consequat purus metus eu velit. Proin
+            metus odio, aliquam eget molestie nec, gravida ut sapien. Phasellus
+            quis est sed turpis sollicitudin venenatis sed eu odio. Praesent
+            eget neque eu eros interdum malesuada non vel leo. Sed fringilla
+            porta ligula.
+          </p>
+        </li>
+        <li id="2011">
+          <img
+            src="http://www.csslab.cl/ejemplos/timelinr/latest/images/10.png"
+          />
+          <h1>2011</h1>
+          <p>
+            Donec semper quam scelerisque tortor dictum gravida. In hac
+            habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit,
+            sem diam ultrices mauris, eu consequat purus metus eu velit. Proin
+            metus odio, aliquam eget molestie nec, gravida ut sapien. Phasellus
+            quis est sed turpis sollicitudin venenatis sed eu odio. Praesent
+            eget neque eu eros interdum malesuada non vel leo. Sed fringilla
+            porta ligula.
+          </p>
+        </li>
+      </ul>
+      <div id="grad_top"></div>
+      <div id="grad_bottom"></div>
+      <a href="#" id="next">+</a>
+      <a href="#" id="prev">-</a>
+    </div>
+    <script>
+      $(function () {
+        $().timelinr({
+          orientation: "vertical",
+          issuesSpeed: 300,
+          datesSpeed: 100,
+          arrowKeys: "true",
+          startAt: 3,
+        });
+      });
+    </script>
+  </body>
+</html>
