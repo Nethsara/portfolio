@@ -6,364 +6,497 @@
     <title>My Story</title>
   </head>
   <style>
-    * {
+    body {
       margin: 0;
       padding: 0;
+      background: rgb(230, 230, 230);
+
+      color: rgb(50, 50, 50);
+      font-family: "Open Sans", sans-serif;
+      font-size: 112.5%;
+      line-height: 1.6em;
     }
 
-    body {
-      background: #222;
-      font-family: Georgia, serif;
-      color: #fff;
-      font-size: 14px;
-    }
+    /* ================ The Timeline ================ */
 
-    a {
-      color: #ffffcc;
-      text-decoration: none;
-      -webkit-transition: 0.5s;
-      -moz-transition: 0.5s;
-      -o-transition: 0.5s;
-      -ms-transition: 0.5s;
-      transition: 0.5s;
-    }
-    a:hover,
-    a.selected {
-      color: #ffcc00;
-    }
-
-    h1,
-    h2,
-    h4,
-    h5,
-    h6 {
-      text-align: center;
-      color: #ccc;
-      text-shadow: #000 1px 1px 2px;
-      margin-bottom: 5px;
-    }
-    h1 {
-      font-size: 18px;
-    }
-    h2 {
-      font-size: 14px;
-    }
-    .sociales {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    #timeline {
-      width: 500px;
-      height: 600px;
-      overflow: hidden;
-      margin: 40px auto;
+    .timeline {
       position: relative;
-      background: url("http://www.csslab.cl/ejemplos/timelinr/latest/images/dot.gif")
-        3px top repeat-y;
-    }
-    #dates {
-      width: 100px;
-      height: 600px;
-      overflow: hidden;
-      float: left;
-    }
-    #dates li {
-      list-style: none;
-      width: 100px;
-      height: 100px;
-      line-height: 100px;
-      font-size: 24px;
-      padding-left: 10px;
-      background: url("http://www.csslab.cl/ejemplos/timelinr/latest/images/biggerdot.png")
-        left center no-repeat;
-    }
-    #dates a {
-      line-height: 38px;
-      padding-bottom: 10px;
-    }
-    #dates .selected {
-      font-size: 38px;
+      width: 660px;
+      margin: 0 auto;
+      margin-top: 20px;
+      padding: 1em 0;
+      list-style-type: none;
     }
 
-    #issues {
-      width: 400px;
-      height: 600px;
-      overflow: hidden;
-      float: left;
+    .timeline:before {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      content: " ";
+      display: block;
+      width: 6px;
+      height: 100%;
+      margin-left: -3px;
+      background: rgb(80, 80, 80);
+      background: -moz-linear-gradient(
+        top,
+        rgba(80, 80, 80, 0) 0%,
+        rgb(80, 80, 80) 8%,
+        rgb(80, 80, 80) 92%,
+        rgba(80, 80, 80, 0) 100%
+      );
+      background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0%, rgba(30, 87, 153, 1)),
+        color-stop(100%, rgba(125, 185, 232, 1))
+      );
+      background: -webkit-linear-gradient(
+        top,
+        rgba(80, 80, 80, 0) 0%,
+        rgb(80, 80, 80) 8%,
+        rgb(80, 80, 80) 92%,
+        rgba(80, 80, 80, 0) 100%
+      );
+      background: -o-linear-gradient(
+        top,
+        rgba(80, 80, 80, 0) 0%,
+        rgb(80, 80, 80) 8%,
+        rgb(80, 80, 80) 92%,
+        rgba(80, 80, 80, 0) 100%
+      );
+      background: -ms-linear-gradient(
+        top,
+        rgba(80, 80, 80, 0) 0%,
+        rgb(80, 80, 80) 8%,
+        rgb(80, 80, 80) 92%,
+        rgba(80, 80, 80, 0) 100%
+      );
+      background: linear-gradient(
+        to bottom,
+        rgba(80, 80, 80, 0) 0%,
+        rgb(80, 80, 80) 8%,
+        rgb(80, 80, 80) 92%,
+        rgba(80, 80, 80, 0) 100%
+      );
+
+      z-index: 5;
     }
-    #issues li {
-      max-width: 300px;
-      width: 400px;
-      height: 600px;
-      list-style: none;
+
+    .timeline li {
+      padding: 1em 0;
+    }
+
+    .timeline li:after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden;
+    }
+
+    .direction-l {
+      position: relative;
+      width: 300px;
+      float: left;
+      text-align: right;
+    }
+
+    .direction-r {
+      position: relative;
+      width: 300px;
+      float: right;
+    }
+
+    .flag-wrapper {
+      position: relative;
+      display: inline-block;
+
       text-align: center;
     }
-    #issues li.selected img {
-      -webkit-transform: scale(1.1, 1.1);
-      -moz-transform: scale(1.1, 1.1);
-      -o-transform: scale(1.1, 1.1);
-      -ms-transform: scale(1.1, 1.1);
-      transform: scale(1.1, 1.1);
-    }
-    #issues li img {
-      width: 200px;
-      margin: 10px 30px 10px 50px;
-      -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)"; /* IE 8 */
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF); /* IE 6 & 7 */
-      zoom: 1;
-      -webkit-transition: all 2s ease-in-out;
-      -moz-transition: all 2s ease-in-out;
-      -o-transition: all 2s ease-in-out;
-      -ms-transition: all 2s ease-in-out;
-      transition: all 2s ease-in-out;
-      -webkit-transform: scale(0.7, 0.7);
-      -moz-transform: scale(0.7, 0.7);
-      -o-transform: scale(0.7, 0.7);
-      -ms-transform: scale(0.7, 0.7);
-      transform: scale(0.7, 0.7);
-    }
-    #issues li h1 {
-      color: #ffcc00;
-      font-size: 48px;
-      text-align: center;
-      text-shadow: #000 1px 1px 2px;
-    }
-    #issues li p {
-      font-size: 14px;
-      margin: 10px 20px;
-      font-weight: normal;
-      line-height: 22px;
-      text-shadow: #000 1px 1px 2px;
+
+    .flag {
+      position: relative;
+      display: inline;
+      background: rgb(248, 248, 248);
+      padding: 6px 10px;
+      border-radius: 5px;
+
+      font-weight: 600;
+      text-align: left;
     }
 
-    #grad_top,
-    #grad_bottom {
-      width: 500px;
-      height: 80px;
-      position: absolute;
-    }
-    #grad_top {
-      top: 0;
-      background: url("http://www.csslab.cl/ejemplos/timelinr/latest/images/grad_top.png")
-        repeat-x;
-    }
-    #grad_bottom {
-      bottom: 0;
-      background: url("http://www.csslab.cl/ejemplos/timelinr/latest/images/grad_bottom.png")
-        repeat-x;
+    .direction-l .flag {
+      -webkit-box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15),
+        0 0 1px rgba(0, 0, 0, 0.15);
+      -moz-box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15),
+        0 0 1px rgba(0, 0, 0, 0.15);
+      box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
     }
 
-    #next,
-    #prev {
+    .direction-r .flag {
+      -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15),
+        0 0 1px rgba(0, 0, 0, 0.15);
+      -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15),
+        0 0 1px rgba(0, 0, 0, 0.15);
+      box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.15);
+    }
+
+    .direction-l .flag:before,
+    .direction-r .flag:before {
       position: absolute;
-      left: 45%;
-      font-size: 70px;
-      width: 38px;
-      height: 22px;
-      background-position: 0 -44px;
-      background-repeat: no-repeat;
-      text-indent: -9999px;
-      overflow: hidden;
+      top: 50%;
+      right: -40px;
+      content: " ";
+      display: block;
+      width: 12px;
+      height: 12px;
+      margin-top: -10px;
+      background: #fff;
+      border-radius: 10px;
+      border: 4px solid rgb(255, 80, 80);
+      z-index: 10;
     }
-    #next:hover,
-    #prev:hover {
-      background-position: 0 0;
+
+    .direction-r .flag:before {
+      left: -40px;
     }
-    #next {
-      bottom: 0;
-      background-image: url("http://www.csslab.cl/ejemplos/timelinr/latest/images/next_v.png");
+
+    .direction-l .flag:after {
+      content: "";
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      height: 0;
+      width: 0;
+      margin-top: -8px;
+      border: solid transparent;
+      border-left-color: rgb(248, 248, 248);
+      border-width: 8px;
+      pointer-events: none;
     }
-    #prev {
-      top: 0;
-      background-image: url("http://www.csslab.cl/ejemplos/timelinr/latest/images/prev_v.png");
+
+    .direction-r .flag:after {
+      content: "";
+      position: absolute;
+      right: 100%;
+      top: 50%;
+      height: 0;
+      width: 0;
+      margin-top: -8px;
+      border: solid transparent;
+      border-right-color: rgb(248, 248, 248);
+      border-width: 8px;
+      pointer-events: none;
     }
-    #next.disabled,
-    #prev.disabled {
-      opacity: 0.2;
+
+    .time-wrapper {
+      display: inline;
+
+      line-height: 1em;
+      font-size: 0.66666em;
+      color: rgb(250, 80, 80);
+      vertical-align: middle;
+    }
+
+    .direction-l .time-wrapper {
+      float: left;
+    }
+
+    .direction-r .time-wrapper {
+      float: right;
+    }
+
+    .time {
+      display: inline-block;
+      padding: 4px 6px;
+      background: rgb(248, 248, 248);
+    }
+
+    .desc {
+      margin: 1em 0.75em 0 0;
+
+      font-size: 0.77777em;
+      font-style: italic;
+      line-height: 1.5em;
+    }
+
+    .direction-r .desc {
+      margin: 1em 0 0 0.75em;
+    }
+
+    /* ================ Timeline Media Queries ================ */
+
+    @media screen and (max-width: 660px) {
+      .timeline {
+        width: 100%;
+        padding: 4em 0 1em 0;
+      }
+
+      .timeline li {
+        padding: 2em 0;
+      }
+
+      .direction-l,
+      .direction-r {
+        float: none;
+        width: 100%;
+
+        text-align: center;
+      }
+
+      .flag-wrapper {
+        text-align: center;
+      }
+
+      .flag {
+        background: rgb(255, 255, 255);
+        z-index: 15;
+      }
+
+      .direction-l .flag:before,
+      .direction-r .flag:before {
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        content: " ";
+        display: block;
+        width: 12px;
+        height: 12px;
+        margin-left: -9px;
+        background: #fff;
+        border-radius: 10px;
+        border: 4px solid rgb(255, 80, 80);
+        z-index: 10;
+      }
+
+      .direction-l .flag:after,
+      .direction-r .flag:after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: -8px;
+        height: 0;
+        width: 0;
+        margin-left: -8px;
+        border: solid transparent;
+        border-bottom-color: rgb(255, 255, 255);
+        border-width: 8px;
+        pointer-events: none;
+      }
+
+      .time-wrapper {
+        display: block;
+        position: relative;
+        margin: 4px 0 0 0;
+        z-index: 14;
+      }
+
+      .direction-l .time-wrapper {
+        float: none;
+      }
+
+      .direction-r .time-wrapper {
+        float: none;
+      }
+
+      .desc {
+        position: relative;
+        margin: 1em 0 0 0;
+        padding: 1em;
+        background: rgb(245, 245, 245);
+        -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+
+        z-index: 15;
+      }
+
+      .direction-l .desc,
+      .direction-r .desc {
+        position: relative;
+        margin: 1em 1em 0 1em;
+        padding: 1em;
+
+        z-index: 15;
+      }
+    }
+    @media screen and (min-width: 400px) and (max-width: 660px) {
+      .direction-l .desc,
+      .direction-r .desc {
+        margin: 1em 4em 0 4em;
+      }
     }
   </style>
   <body>
-    <div id="timeline">
-      <ul id="dates">
-        <li><a href="#1900" class="selected">1900</a></li>
-        <li><a href="#1930">1930</a></li>
-        <li><a href="#1944">1944</a></li>
-        <li><a href="#1950">1950</a></li>
-        <li><a href="#1971">1971</a></li>
-        <li><a href="#1977">1977</a></li>
-        <li><a href="#1989">1989</a></li>
-        <li><a href="#1999">1999</a></li>
-        <li><a href="#2001">2001</a></li>
-        <li><a href="#2011">2011</a></li>
-      </ul>
-      <ul id="issues">
-        <li id="1900" class="selected">
-          <img
-            src="http://www.csslab.cl/ejemplos/timelinr/latest/images/1.png"
-          />
-          <h1>1900</h1>
-          <p>
-            Donec semper quam scelerisque tortor dictum gravida. In hac
-            habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit,
-            sem diam ultrices mauris, eu consequat purus metus eu velit. Proin
-            metus odio, aliquam eget molestie nec, gravida ut sapien. Phasellus
-            quis est sed turpis sollicitudin venenatis sed eu odio. Praesent
-            eget neque eu eros interdum malesuada non vel leo. Sed fringilla
-            porta ligula.
-          </p>
-        </li>
-        <li id="1930">
-          <img
-            src="http://www.csslab.cl/ejemplos/timelinr/latest/images/2.png"
-          />
-          <h1>1930</h1>
-          <p>
-            Donec semper quam scelerisque tortor dictum gravida. In hac
-            habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit,
-            sem diam ultrices mauris, eu consequat purus metus eu velit. Proin
-            metus odio, aliquam eget molestie nec, gravida ut sapien. Phasellus
-            quis est sed turpis sollicitudin venenatis sed eu odio. Praesent
-            eget neque eu eros interdum malesuada non vel leo. Sed fringilla
-            porta ligula.
-          </p>
-        </li>
-        <li id="1944">
-          <img
-            src="http://www.csslab.cl/ejemplos/timelinr/latest/images/3.png"
-          />
-          <h1>1944</h1>
-          <p>
-            Donec semper quam scelerisque tortor dictum gravida. In hac
-            habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit,
-            sem diam ultrices mauris, eu consequat purus metus eu velit. Proin
-            metus odio, aliquam eget molestie nec, gravida ut sapien. Phasellus
-            quis est sed turpis sollicitudin venenatis sed eu odio. Praesent
-            eget neque eu eros interdum malesuada non vel leo. Sed fringilla
-            porta ligula.
-          </p>
-        </li>
-        <li id="1950">
-          <img
-            src="http://www.csslab.cl/ejemplos/timelinr/latest/images/4.png"
-          />
-          <h1>1950</h1>
-          <p>
-            Donec semper quam scelerisque tortor dictum gravida. In hac
-            habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit,
-            sem diam ultrices mauris, eu consequat purus metus eu velit. Proin
-            metus odio, aliquam eget molestie nec, gravida ut sapien. Phasellus
-            quis est sed turpis sollicitudin venenatis sed eu odio. Praesent
-            eget neque eu eros interdum malesuada non vel leo. Sed fringilla
-            porta ligula.
-          </p>
-        </li>
-        <li id="1971">
-          <img
-            src="http://www.csslab.cl/ejemplos/timelinr/latest/images/5.png"
-          />
-          <h1>1971</h1>
-          <p>
-            Donec semper quam scelerisque tortor dictum gravida. In hac
-            habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit,
-            sem diam ultrices mauris, eu consequat purus metus eu velit. Proin
-            metus odio, aliquam eget molestie nec, gravida ut sapien. Phasellus
-            quis est sed turpis sollicitudin venenatis sed eu odio. Praesent
-            eget neque eu eros interdum malesuada non vel leo. Sed fringilla
-            porta ligula.
-          </p>
-        </li>
-        <li id="1977">
-          <img
-            src="http://www.csslab.cl/ejemplos/timelinr/latest/images/6.png"
-          />
-          <h1>1977</h1>
-          <p>
-            Donec semper quam scelerisque tortor dictum gravida. In hac
-            habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit,
-            sem diam ultrices mauris, eu consequat purus metus eu velit. Proin
-            metus odio, aliquam eget molestie nec, gravida ut sapien. Phasellus
-            quis est sed turpis sollicitudin venenatis sed eu odio. Praesent
-            eget neque eu eros interdum malesuada non vel leo. Sed fringilla
-            porta ligula.
-          </p>
-        </li>
-        <li id="1989">
-          <img
-            src="http://www.csslab.cl/ejemplos/timelinr/latest/images/7.png"
-          />
-          <h1>1989</h1>
-          <p>
-            Donec semper quam scelerisque tortor dictum gravida. In hac
-            habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit,
-            sem diam ultrices mauris, eu consequat purus metus eu velit. Proin
-            metus odio, aliquam eget molestie nec, gravida ut sapien. Phasellus
-            quis est sed turpis sollicitudin venenatis sed eu odio. Praesent
-            eget neque eu eros interdum malesuada non vel leo. Sed fringilla
-            porta ligula.
-          </p>
-        </li>
-        <li id="1999">
-          <img
-            src="http://www.csslab.cl/ejemplos/timelinr/latest/images/8.png"
-          />
-          <h1>1999</h1>
-          <p>
-            Donec semper quam scelerisque tortor dictum gravida. In hac
-            habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit,
-            sem diam ultrices mauris, eu consequat purus metus eu velit. Proin
-            metus odio, aliquam eget molestie nec, gravida ut sapien. Phasellus
-            quis est sed turpis sollicitudin venenatis sed eu odio. Praesent
-            eget neque eu eros interdum malesuada non vel leo. Sed fringilla
-            porta ligula.
-          </p>
-        </li>
-        <li id="2001">
-          <img
-            src="http://www.csslab.cl/ejemplos/timelinr/latest/images/9.png"
-          />
-          <h1>2001</h1>
-          <p>
-            Donec semper quam scelerisque tortor dictum gravida. In hac
-            habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit,
-            sem diam ultrices mauris, eu consequat purus metus eu velit. Proin
-            metus odio, aliquam eget molestie nec, gravida ut sapien. Phasellus
-            quis est sed turpis sollicitudin venenatis sed eu odio. Praesent
-            eget neque eu eros interdum malesuada non vel leo. Sed fringilla
-            porta ligula.
-          </p>
-        </li>
-        <li id="2011">
-          <img
-            src="http://www.csslab.cl/ejemplos/timelinr/latest/images/10.png"
-          />
-          <h1>2011</h1>
-          <p>
-            Donec semper quam scelerisque tortor dictum gravida. In hac
-            habitasse platea dictumst. Nam pulvinar, odio sed rhoncus suscipit,
-            sem diam ultrices mauris, eu consequat purus metus eu velit. Proin
-            metus odio, aliquam eget molestie nec, gravida ut sapien. Phasellus
-            quis est sed turpis sollicitudin venenatis sed eu odio. Praesent
-            eget neque eu eros interdum malesuada non vel leo. Sed fringilla
-            porta ligula.
-          </p>
-        </li>
-      </ul>
-      <div id="grad_top"></div>
-      <div id="grad_bottom"></div>
-      <a href="#" id="next">+</a>
-      <a href="#" id="prev">-</a>
-    </div>
-    <script>
-      $(function () {
-        $().timelinr({
-          orientation: "vertical",
-          issuesSpeed: 300,
-          datesSpeed: 100,
-          arrowKeys: "true",
-          startAt: 3,
-        });
-      });
-    </script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- The Timeline -->
+
+    <ul class="timeline">
+      <!-- Item 1 -->
+      <li>
+        <div class="direction-r">
+          <div class="flag-wrapper">
+            <span class="flag">Birthday</span>
+            <span class="time-wrapper"><span class="time">2002</span></span>
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="direction-l">
+          <div class="flag-wrapper">
+            <span class="flag">First Computer</span>
+            <span class="time-wrapper"><span class="time">2008</span></span>
+          </div>
+          <div class="desc">
+            Got my first computer where I used to play games a lot
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="direction-r">
+          <div class="flag-wrapper">
+            <span class="flag">First IT Class</span>
+            <span class="time-wrapper"><span class="time">2010</span></span>
+          </div>
+          <div class="desc">
+            Passionate about computer games after playing lots and lots of
+            games, and attended for a
+            <a href="http://ewisdomcomputeracademy.blogspot.com/">
+              computer class</a
+            >
+            first time. In there I was able to learn about MS Office, HTML, Java
+            ...etc. But not passionate about programming at that time.
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="direction-l">
+          <div class="flag-wrapper">
+            <span class="flag">Programming Book</span>
+            <span class="time-wrapper"><span class="time">2011</span></span>
+          </div>
+          <div class="desc">
+            Got a huge book about programming and started to learn about
+            programming in deep.
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="direction-r">
+          <div class="flag-wrapper">
+            <span class="flag">Moved to Badulla</span>
+            <span class="time-wrapper"><span class="time">2013</span></span>
+          </div>
+          <div class="desc">
+            Moved to Badulla where most of life changing events happened. Joined
+            to <a href="https://lakaruna.org/"> Lak Aruna Foundation</a> where
+            my Software Engineering journey really begins. In there I was able
+            to do experiments in multiple fields including HTML, Java, Robotics,
+            Flash, ...etc. Thanks for guidance from amazing people like Janak
+            Srimal, Chamath Nimantha, Thushan Isuru and lot more...
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="direction-l">
+          <div class="flag-wrapper">
+            <span class="flag">Robo Battles UWU</span>
+            <span class="time-wrapper"><span class="time">2016</span></span>
+          </div>
+          <div class="desc">
+            Participated to first Robot Battles competition with a friend in Uva
+            Wellassa university where we defeat painfully.
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="direction-r">
+          <div class="flag-wrapper">
+            <span class="flag">Robotic Journey & Drones</span>
+            <span class="time-wrapper"><span class="time">2016</span></span>
+          </div>
+          <div class="desc">
+            Participated to multiple robotic games from major universities in
+            Sri Lanka. Most are defeated but was able to win merit on some
+            games. Meet Dale Low who sponsored to buy Drone gadgets, where was
+            able to build first Drone. Journey continues with Dileepa
+            Jayawardana about robotics and drones.
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="direction-l">
+          <div class="flag-wrapper">
+            <span class="flag">IDEA Challenge - IESL</span>
+            <span class="time-wrapper"><span class="time">2019</span></span>
+          </div>
+          <div class="desc">
+            Won the IDEA Challenge that was held by IESL. Built first FPV Racing
+            to participate competition in SLIIT, but suspended due to Easter
+            Attack.
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="direction-r">
+          <div class="flag-wrapper">
+            <span class="flag">Robotics Journey</span>
+            <span class="time-wrapper"><span class="time">2020</span></span>
+          </div>
+          <div class="desc">
+            Teamed up with Vinidu Dayananda for continue Robotics and Drones
+            journey. Participated to multiple Exhibitions where we showcase our
+            capabilities.
+          </div>
+        </div>
+      </li>
+
+      <li>
+        <div class="direction-l">
+          <div class="flag-wrapper">
+            <span class="flag">Joined to IJSE</span>
+            <span class="time-wrapper"><span class="time">2022</span></span>
+          </div>
+          <div class="desc">Joined IJSE for complete GDSE.</div>
+        </div>
+      </li>
+
+      <li>
+        <div class="direction-r">
+          <div class="flag-wrapper">
+            <span class="flag">Internship</span>
+            <span class="time-wrapper"><span class="time">2022</span></span>
+          </div>
+          <div class="desc">Joined Apium Innovations for my internship.</div>
+        </div>
+      </li>
+
+      <li>
+        <div class="direction-l">
+          <div class="flag-wrapper">
+            <span class="flag">ASE</span>
+            <span class="time-wrapper"><span class="time">2023</span></span>
+          </div>
+          <div class="desc">
+            Promoted to Associate Software Engineer Position.
+          </div>
+        </div>
+      </li>
+    </ul>
   </body>
 </html>
